@@ -1,7 +1,7 @@
 # Übungen Serie 1
 
 ## Aufgabe 1
-
+```
 (a) False or True and False and True or False
 
     = False or False or Fale
@@ -24,9 +24,11 @@
     = not(False or False) or False
     = True or False
     = False
+```
 
 ## Aufgabe 2
 
+```
 409 = 204 * 2 + 1
 204 = 102 * 2 + 0
 102 =  51 * 2 + 0
@@ -36,6 +38,7 @@
   6 =   3 * 2 + 0
   3 =   1 * 2 + 1
   1 =   0 * 2 + 1
+```
 
 Von unten nach Oben ablesen:
 

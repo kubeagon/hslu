@@ -6,20 +6,29 @@ einstelliger Operator (BSP: Kehrwert, Betrag etc.)
 zweistelliger Operator (BSP: 1 + 5, 2 + 2, etc.)
 
 ### NOT
+
+```
 not True = False
 not False = True
+```
 
 ### AND
+
+```
 True and True = True
 True and False = False
 False and True = False
 False nad False = False
+```
 
 ### OR
+
+```
 True or True = True
 True or False = True
 False or True = True
 False or False = False
+```
 
 ### Priorität (Linksassoziativität)
 
@@ -41,20 +50,25 @@ Die einstellige Negationsoperator sowie die wzeistelligen Operatoren Addition, S
 
 Ganzzahldivision:
 
+```
     10 // 3 = 3
     10 // 7 = 1
     10 // 5 = 2
+```
 
 Rest:
 
+```
     10 % 3 = 1
     10 % 7 = 3
     10 % 5 = 0
+```
 
 ### Integer Werte als Bits
 
 34 kann folgendermassen in Binär umgerechnet werden
 
+```
 34 = 17 * 2 + 0
 17 =  8 * 2 + 1
  8 =  4 * 2 + 0
@@ -64,6 +78,7 @@ Rest:
 
  -> 100010 = 2^0 * 0 + 2^1 * 1 + 2^2 * 0 + 2^3 * 0 + 2^4 * 0 + 2^5 * 1
            = 2^1 * 1 + 2^5 * 1 = 34
+```
 
 ## Floats
 
@@ -72,9 +87,11 @@ Alle Zahlen bei denen sich die Nachkommastellen periodisch wiederholen können a
 
 Reelle Zahl in Binär umrechnen
 
+```
 0.625 * 2 = 1 + 0.25
 0.25  * 2 = 0 + 0.5
 0.5   * 2 = 1 + 0
+```
 
 Von Oben nach Unten ablesen:
 
@@ -88,3 +105,35 @@ Da die Periode gekürzt werden sind sie Mathematisch nicht perfekt präzise. Ein
 
 Python returned FALSE
 
+## Set, List und Matrix
+
+Mengen können verglichen werden:
+
+die zweistellige Relation = (Gleichheit)
+{a,b,c} = {a,b,c}   -> True
+{a,b,c} = {a,b,c,x} -> False
+{a,b,c} = {a,b,x}   -> False
+
+die zweistellige Relation ⊂ (Teilmenge)
+{a,b,c} ⊂ {a,b,c} -> True
+{a,b}   ⊂ {a,c,x} -> False
+
+Mit Mengen rechnen
+
+der zweistellige Operator ∩ (Durchschnitt)
+{a,b,c} ∩ {b,c,d} = {b,c}
+{a,b} ∩ {c,d} = {}
+
+der zweistellige Operator u (Vereinigung)
+{a,b} u {c,d} = {a,b,c,d}
+
+der zweistellige Operator \ (Differenz)
+{a,b,c} \ {b,c,d} = {a}
+
+{a,b} \ {b,c} = a,b}
+
+Der einstellige Operator - (Komplement)
+
+a,b ⊂ a,b,c,d = a,b,c,d
+
+kompliment = c,d
