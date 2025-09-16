@@ -130,10 +130,10 @@ der zweistellige Operator u (Vereinigung)
 der zweistellige Operator \ (Differenz)
 {a,b,c} \ {b,c,d} = {a}
 
-{a,b} \ {b,c} = a,b}
+{a,b} \ {b,c} = {a,b}
 
 Der einstellige Operator - (Komplement)
 
-a,b ⊂ a,b,c,d = a,b,c,d
+{a,b} ⊂ {a,b,c,d} = {a,b,c,d}
 
-kompliment = c,d
+kompliment = {c,d}

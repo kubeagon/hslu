@@ -2,16 +2,6 @@
 
 [Ilias link to Module](https://elearning.hslu.ch/ilias/ilias.php?baseClass=ilrepositorygui&cmdNode=z8:ob&cmdClass=ilObjFileGUI&cmd=sendfile&ref_id=6847906)
 
-## An overview to JAVA
-
-### JRE vs JDK
-
-Java Runtime Evironment vs Java Development Kit
-
-JRE -> Umgebung welches nötig ist für das ausführen vom Program
-JDK -> Enthält zusätlich Compiler, Debugger, etc.
-
-![alt text](jdk-vs-jre.png)
 
 ### Componants
 
@@ -22,6 +12,20 @@ java
 
 
 ## Aufgabe 1
+
+```mermaid
+---
+title: Rechtecksberechnung
+---
+stateDiagram-v2
+    [*] --> EingabeBreite
+    EingabeBreite --> EingabeHoehe
+    EingabeHoehe --> BerechnungFlaeche
+    BerechnungFlaeche --> BerechnungUmfang
+    BerechnungUmfang --> AusgabeFlaeche
+    AusgabeFlaeche --> AusgabeUmfang
+    AusgabeUmfang --> [*]
+```
 
 http://www.guru99.com/java-platform.html
 

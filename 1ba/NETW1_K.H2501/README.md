@@ -2,13 +2,10 @@
 
 | Infos      | Details                                                                                          |
 |------------|--------------------------------------------------------------------------------------------------|
-| Teacher    | Dr. Reto Berger                                                                                  |
-| Room       | EG I.S1A_MAX                                                                                     |
-| Ilias      | [Link](https://elearning.hslu.ch/ilias/ilias.php?baseClass=ilrepositorygui&ref_id=6786803)                                                                                                 |
+| Teacher    | Werner Odermatt                                                                                  |
+| Room       | Haus 12, S12_003_HOR_154                                                                         |
+| Ilias      | [Link](https://elearning.hslu.ch/ilias/login.php?target=crs_6786900&client_id=hslu)                                                                                                 |
 | MyCampus   |                                                                                                  |
 | Recordings |                                                                                                  |
 | ETCS       |                                                                                                  |
 
-## Navigation
-
-- [Serie 1](1ba/DMATH-ALGO.H2501/Serie1/notes.md)
