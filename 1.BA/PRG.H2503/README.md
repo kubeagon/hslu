@@ -11,5 +11,5 @@
 
 ## Navigation
 
-- [Block 01](1ba/PRG.H2503/block01/notes.md) 
+- [Block 01](/1.BA/PRG.H2503/block01/notes.md) 
 

@@ -62,8 +62,8 @@ float
 
 Ex: 
 
-- [Rechtecksrechner](1ba/PRG.H2503/block01/RechtecksRechner.java)
-- [Kraftrechner](1ba/PRG.H2503/block01/Kraftrechner.java)
+- [Rechtecksrechner](/RechtecksRechner.java)
+- [Kraftrechner](/1.BA/PRG.H2503/block01/Kraftrechner.java)
 
 %d -> int, long, short, byte
 %f -> floating-point
