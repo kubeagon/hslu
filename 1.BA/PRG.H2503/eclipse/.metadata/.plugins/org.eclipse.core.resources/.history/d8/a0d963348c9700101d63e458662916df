@@ -1,0 +1,21 @@
+package ch.hslu.informatik.prg.block01.afg0;
+
+import java.util.Scanner;
+
+public class IntroBeispielJava {
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Bitte gebe eine Zahl ein");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int eingabe;
+		
+		eingabe = sc.nextInt();
+		
+		System.out.println("Es wurde die Zahl " + eingabe + " eingegeben.");
+
+	}
+
+}
