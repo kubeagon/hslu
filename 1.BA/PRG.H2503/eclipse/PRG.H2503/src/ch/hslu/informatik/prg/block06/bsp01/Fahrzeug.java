@@ -1,0 +1,8 @@
+package ch.hslu.informatik.prg.block06.bsp01;
+
+public class Fahrzeug {
+	
+	String fahrzeugNummer;
+	double leerGewicht;
+
+}
