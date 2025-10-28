@@ -11,5 +11,6 @@
 
 ## Navigation
 
-- [Block 01](/1.BA/PRG.H2503/block01/notes.md) 
+- [Block 01](/1.BA/PRG.H2503/block01/notes.md)
+- [SW05 Objekte & Klassen](/1.BA/PRG.H2503/SW05/notes.md)
 
