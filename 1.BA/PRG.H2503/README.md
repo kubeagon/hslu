@@ -12,6 +12,7 @@
 ## Navigation
 
 - [Block 01](/1.BA/PRG.H2503/block01/notes.md)
+- [SW02 Datentypen, Operatoren & Ausdrücke](/1.BA/PRG.H2503/SW02/notes.md)
 - [SW05 Objekte & Klassen](/1.BA/PRG.H2503/SW05/notes.md)
 - [SW06 Vererbung & Polymorphie](/1.BA/PRG.H2503/SW06/notes.md)
 
