@@ -1,4 +1,4 @@
-# Notes to HSLU Modules
+# HSLU Modules
 
 ## 1.BA
 
