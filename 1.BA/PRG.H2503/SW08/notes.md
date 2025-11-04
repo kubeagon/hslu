@@ -1,3 +1,16 @@
+# Navigation
+
+- [Interfaces](#interfaces)
+    - [Spezifikation vs. Implementation](#spezifikation-vs-implementierung)
+    - [Schnittstellen (Interfaces)](#schnittstellen-interfaces)
+    - [Interfaces in Java](#interfaces-in-java)
+    - [Verwendung von Schnittstellen](#verwendung-von-schnittstellen)
+- [Vergleichen von Referenztypen](#vergleichen-von-referenztypen)
+    - [Methode Object.equals](#methode-objectequals)
+    - [Methode Object.hashCode](#methode-objecthashcode)
+    - [Schnittstelle java.lang.Comparable](#schnittstelle-javalangcomparable)
+
+
 # Interfaces
 
 ## Spezifikation vs. Implementierung
@@ -7,7 +20,7 @@ Dies nennt mann: *Spezifikation*
 
 Durch die Spezifikation wird klar was das System leisten muss. Dann kann die Implementierung angefangen werden.
 
-## Spezifikation und Schnittstellen
+## Schnittstellen (Interfaces)
 
 Für die Beschreibung des Verhaltens eines Systems in Java werden *Schnittstellen* oder auch *Interfaces* genannt, verwendet.
 Eine Schnittstelle beschreibt was zu tun ist, ohne auf das wie einzugehen.
@@ -191,7 +204,6 @@ public class Schiff implements Beweglich, Fernsteuerbar {
 }
 ```
 
-
 #### Schnittstellen Vererbung
 
 Eine Schnittstelle kann auch von einer anderen Schnittstelle abgeleitet werden (geerbt werden)
@@ -223,3 +235,149 @@ public interface InterfaceB extends InterfaceA {
 
 Daraus folgt: Alle Klassen die InterfaceB implementiereun müssen zwingend audch die Methoden implementieren die im InterfaceA vorgegeben sind.
 
+## Verwendung von Schnittstellen
+
+Eine Referenz vom Typ einer Schnittstelle kann auf die Instaz einer beliebigen Klasse zeigen, welche die Schnittstelle implementiert (realisiert).
+
+Biespielsweise:
+
+```java
+Beweglich refA = new Auto();
+Beweglich refB = new Schiff();
+```
+
+Es ist möglich ein Array zu definieren in dem Objekte vom Typ der Schnittstelle verwaltet werden.
+
+Beispielsweise:
+
+```java
+Beweglich[] arr new Beweglich[3];
+arr[0] = new Auto();
+arr[1] = new Schiff();
+arr[2] = new Hubschrauber();
+
+for (Beweglich beweglichesObjekt : arr) {
+    beweglichesObjekt.start();
+}
+```
+
+Ob das konkrete beweglichesObjekt vom Typ Auto, Schiff oder Hubschrauber ist, ist irrelevant. der Typ "Beweglich" stellt sicher die Methode start
+die objekte bedenkenlos aufrufen kann.
+
+# Vergleichen von Referenztypen
+
+Sobald Objekte sortiert oder gefiltert werden müssen, braucht man eine Möglichkeit, diese Untereinander zu vergleichen. Objekte werden normalerweise nach Inhalt
+von Instanzvariablen verglichen. Welche Intanzvariablen berücksichtigt werden muss situativ entschieden werden.
+
+Beim Vergleich von zwei Objekten muss herausgefunden werden ob die Objekte gleich sind, und falls nicht welches "grösser" ist. Die Überprüfung wird mit der
+Methode *equals* durchgeführt. Diese Methode existiert bereits als Instanzmethode von der Klasse java.lang.Object (Mutter aller Mütter).
+
+## Methode Object.equals
+
+Die Standard-Implementation der Instanzmethode equals in der Klasse Object vergleicht nur, ob die Objektreferenzen gleich sind.
+
+Im Code:
+
+```java
+public boolean equals(Object obj) {
+    return (this == obj);
+}
+```
+
+Beispielsweise:
+
+```java
+Point a = new Point(10, 20);
+Point b = a;
+Point c = new Point(10, 20);
+
+boolean p = a.equals(b);
+boolean q = a.equals(c);
+```
+
+- p ist TRUE
+- q ist FALSE
+
+Da die Standardimplementation von "equals" die Objektidentität / Referenzierung (Speicheraddressierung) vergleicht. Dewegen wird eine eigene
+Implementation für die Klasse "Point" benötigt:
+
+```java
+public boolean equals (Object obj) {
+    // Im ersten Schritt Identität prüfen
+    if (this == obj) {
+        return true;
+    }
+
+    // Im zweiten Schritt überprüfen Objekt vom Typ "Point" ist
+    if (!(obj instanceof Point)) {
+        return false;
+    }
+
+    // Im dritten Schritt Typ von Object Umwandeln zu "Point" (Nur da es von Typ Point ist)
+    Point param = (Point)obj;
+
+    // Im letzten Schritt werden die Attribute verglichen
+    return this.x == param.x && this.y == param.y
+}
+```
+
+## Methode Object.hashCode
+
+Wenn die Methode *equals* überschrieben wird, muss die Methode hashCode (eine weitere Methode der Klasse Object) auch überschrieben werden.
+Es mussen die gleichen Attribute wie in der Methode Attribute berücksichtigt werden.
+
+Sonst kann die Verwaltung von Instanzer der Klasse in Container wie Hashtable, Hashmap, etc. nicht gemacht werden.
+
+Folgendes muss für die Klasse Point implementiert werden
+
+```java
+public int hashCode() {
+    return Objects.hash(this.x, this.y);
+}
+```
+
+## Schnittstelle java.lang.Comparable
+
+Die Schnittstelle Comparable deklariert die Methode *compareTo* und ermöglicht jeder Klasse, explizit anzugeben, wie ihre Instanzen untereinander
+verglichen werden sollen. Jede Klasse definiert dafür eine *natürliche Sortierordnung*.
+
+Comparable ist eine generische Schnittstelle, die von beliebigen Klassen implementiert werden kann. Die Realisierung der Schnittstelle wird der Typ
+von Instanzen der realisierenden Klassen den Typ *Comparable* erweitert.
+
+```java
+public interface Comparable<T> {
+    public int compareTo(T o);
+}
+```
+
+Folgend ein Beispiel wobei die Alter von zwei Personen verglichen werden:
+
+```java
+public class Person implements Comparable<Person> {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public int compareTo(Person other) {
+        // Alter vergleichen
+        if (this.age < other.age) return -1;
+        if (this.age > other.age) return 1;
+        return 0;
+    }
+}
+```
+
+Dies kann beispielsweise folgendermassen im Code verwendet werden:
+
+```java
+Person a = new Person("Alice", 20);
+Person b = new Person("Bob", 25);
+
+System.out.println(a.compareTo(b));  // -1  (Alice ist jünger)
+System.out.println(b.compareTo(a));  //  1  (Bob is älter)
+```
