@@ -82,7 +82,7 @@ wird mit dem Schlüsselwort *implements* gemachtt.
 Beispiel einer Klasse die eine Schnittstelle realisiert
 
 ```java
-public class Auto implements Beweglich{
+public class Auto implements Beweglich {
     // Konkrete Implementierung aller Methoden der Schnittstelle
 }
 ```
@@ -92,6 +92,8 @@ Die Beziehung zwischen der Schnittstelle und realisierenden Klasse ist eine *imp
 - Die gestrichlete Linie signalisiert, dass die Klasse "Auto" die Schnittstelle erbt ohne Implementation
 - Die Klasse "Auto" implementiert alle Methoden der Klasse "Beweglich" → Dadurch ist jede Instanz der Klasse automatisch auch vom Typ "Beweglich"
 - Eine Instanz der Klasse "Auto" ist vom Typ Objekt, Auto und Beweglich
+
+#### Interface zu Klassen beziehung
 
 ```mermaid
 classDiagram
@@ -115,3 +117,109 @@ classDiagram
     Object <|-- Auto
 
 ```
+
+#### Mehrere Klassen implementieren eine Schnittstelle
+
+Eine Schnittstelle kann auch von mehreren Klassen implementiert werden, weil die Schnittstelle eine Abstraktion der Implementierung ist
+(gibt das Verhalten vor das implementiert werden soll).
+
+```mermaid
+classDiagram
+    class Beweglich {
+        <<interface>>
+        +start() void
+        +stop() void
+        +aendereRichtung(int grad) void
+        +aendereGeschwindigkeit(double delta) void
+    }
+
+    class Hubschrauber
+
+    class Auto {
+        -typ : String
+        +getTyp() String
+        +setTyp(typ : String) void
+    }
+
+    class Schiff
+
+    Beweglich <|.. Hubschrauber
+    Beweglich <|.. Auto
+    Beweglich <|.. Schiff
+
+```
+
+#### Eine Klasse implementiert mehrere Interfaces
+
+Eine klasse kann nur von einer Klasse abgeleitet werden, jedoch kann sie mehrere Interfaces realisieren. Mit jeder realisierenden Schnittstelle erhalten
+die Instanzen der Klasse einen weiteren Typ.
+
+```mermaid
+classDiagram
+    class Beweglich {
+        <<interface>>
+        +start() void
+        +stop() void
+        +aendereRichtung(int grad) void
+        +aendereGeschwindigkeit(double delta) void
+    }
+
+    class Fernsteuerbar {
+    <<interface>>
+    +verbindungAufbauen() void
+    +verbindungAbbauen() void
+    }
+
+    class Auto {
+        -typ : String
+        +getTyp() String
+        +setTyp(typ : String) void
+    }
+
+    class Schiff
+
+    Beweglich <|.. Auto
+    Beweglich <|.. Schiff
+    Fernsteuerbar <|.. Schiff
+```
+
+Im code:
+
+```java
+public class Schiff implements Beweglich, Fernsteuerbar {
+    // Implementation
+}
+```
+
+
+#### Schnittstellen Vererbung
+
+Eine Schnittstelle kann auch von einer anderen Schnittstelle abgeleitet werden (geerbt werden)
+
+```mermaid
+classDiagram
+    class InterfaceA {
+        <<interface>>
+    }
+
+    class InterfaceB {
+        <<interface>>
+    }
+
+    InterfaceA <|.. InterfaceB
+```
+
+Im code sieht es folgendermassen aus:
+
+```java
+public interface InterfaceA {
+    void methodeA();
+}
+
+public interface InterfaceB extends InterfaceA {
+    void methodeX();
+}
+```
+
+Daraus folgt: Alle Klassen die InterfaceB implementiereun müssen zwingend audch die Methoden implementieren die im InterfaceA vorgegeben sind.
+
