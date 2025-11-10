@@ -7,6 +7,15 @@
 - [Network Representations and Topologies](#network-representations-and-topologies)
     - [Network Representation](#network-representations)
     - [Topology Diagrams](#topology-diagrams)
+- [Common Types of Networks](#common-types-of-networks)
+    - [LANs and WANs](#lans-and-wans)
+    - [The Internet](#the-internet)
+    - [Intranets and Extranets](#intranets-and-extranets)
+- [Internet Connections](#internet-connections)
+    - [Small Office Internet Connections](#home-and-small-office-internet-connections)
+    - [Business Internet Connections](#businesses-internet-connections)
+    - [Converging Networks](#the-converging-network)
+
 
 # Network Componants
 
