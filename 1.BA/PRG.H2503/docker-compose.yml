@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  java-dev:
+    image: kubelize/prg-h2503-java21:1.0.0
+    container_name: prg-h2503-java21
+    volumes:
+      - /Users/dan/Git/hslu/1.BA/PRG.H2503:/workspace
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    environment:
+      - JAVA_HOME=/usr/local/openjdk-21
+    command: bash

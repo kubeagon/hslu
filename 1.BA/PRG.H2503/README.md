@@ -8,6 +8,7 @@
 | MyCampus   | [link](https://mycampus.hslu.ch/de-ch/stud-i/anlass-detail/?aid=681615&bU=https%3A%2F%2Fmycampus.hslu.ch%2Fde-ch%2Fstud-i%2Fmein-stundenplan%2Fgrafisch%2F&bN=Stundenplan)                                            |
 | Recordings | [link](http://eee-03321.simple.eee.intern:8080/prg/aufzeichnungen.html)                          |
 | ETCS       | 6                                                                                                |
+| Literatur  | Java als erste Programmiersprache ISBN 978-3-658-12117-4 DOI 10.1007/978-3-658-12118-1           |
 
 ## Navigation
 
