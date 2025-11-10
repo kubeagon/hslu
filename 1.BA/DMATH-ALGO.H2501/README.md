@@ -11,4 +11,4 @@
 
 ## Navigation
 
-- [Serie 1](1ba/DMATH-ALGO.H2501/Serie1/notes.md)
+- [SW01](/1.BA/DMATH-ALGO.H2501/SW01/notes.md)
