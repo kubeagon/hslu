@@ -2,9 +2,7 @@
 
 Für a,b,c,n aus dem Universum 𝑵 sei
 
-```latex
 Fermat(a,b,c,n): Die Summe von $$a^n$$ und $$b^n$$ ist $$c^n$$
-```
 
 Finde für dieses Prädikat Werte a,b,c und n aus dem Universum, so dass drei wahre und drei falsche Aussagen entstehen.
 
