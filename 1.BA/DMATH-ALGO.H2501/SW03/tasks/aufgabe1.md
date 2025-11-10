@@ -8,7 +8,9 @@ Finde für dieses Prädikat Werte a,b,c und n aus dem Universum, so dass drei wa
 
 ## Lösungsweg
 
-$$a^n$$ + $$b^n$$ = $$c^n$$
+\[
+a^n + b^n = c^n
+\]
 
 Zahlen einsetzen die, die Gleichung erfüllen oder eben nicht:
 
