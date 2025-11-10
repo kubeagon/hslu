@@ -46,4 +46,5 @@ Für ein Universum mit endlich vielen Werten können Generalisierung und Spezial
 
 # Aufgaben
 
-- [Aus einem Prädikat wahre und Falsche Aussagen machen](/1.BA/DMATH-ALGO.H2501/SW03/tasks/aufgabe1.md)
+- [Aufgabe 1 - Aus einem Prädikat wahre und Falsche Aussagen machen](/1.BA/DMATH-ALGO.H2501/SW03/tasks/aufgabe1.md)
+- [Aufgabe 2 - Prädikaten ohne Quantoren schreiben](/1.BA/DMATH-ALGO.H2501/SW03/tasks/aufgabe2.md)
