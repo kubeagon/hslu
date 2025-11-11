@@ -10,7 +10,7 @@
 | ETCS       | 6                                                                                                |
 | Literatur  | Java als erste Programmiersprache ISBN 978-3-658-12117-4 DOI 10.1007/978-3-658-12118-1           |
 
-## Navigation
+# Navigation
 
 - [Block 01](/1.BA/PRG.H2503/block01/notes.md)
 - [SW02 Datentypen, Operatoren & Ausdrücke](/1.BA/PRG.H2503/SW02/notes.md)

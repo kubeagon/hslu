@@ -9,3 +9,6 @@
 | Recordings |                                                                                                  |
 | ETCS       |                                                                                                  |
 
+# Navigation 
+
+- [SW01 Networking Today](/1.BA/NETW1_K.H2501/SW01/notes.md)
