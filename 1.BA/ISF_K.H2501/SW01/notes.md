@@ -3,6 +3,11 @@
 - [Einführung](#einführung-zu-information-security)
     - [Definition Date, Information und Wissen](#definition-daten-information-und-wissen)
     - [Gefahren](#gefahren)
+    - [Grösste Bedrohungen](#grösste-bedrohungen-für-daten-und-informationen-gemäss-enisa-2024)
+- [Grundbegriffe Sicherheit und Risiko](#grundbegriffe-sicherheit-und-risiko)
+    - [Sicherheit](#sicherheit)
+    - [Risiko](#risiko)
+- [Grundschutzziele der Informationssicherheit](#grundschutzziele-der-informationssicherheit)
 
 # Einführung zu Information Security
 
@@ -117,7 +122,7 @@ Definition: Unter einem Risiko ist ein eventuelles, durch Eintrittswahrscheinlic
 Risiko = Wahrscheinlichkeit oder Eintretenshäufigkeit * Schadensausmass
 ```
 
-# GrundSchutzziele der Informationssicherheit
+# Grundschutzziele der Informationssicherheit
 
 C-I-A
 
