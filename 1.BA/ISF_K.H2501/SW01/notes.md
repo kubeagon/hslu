@@ -82,3 +82,51 @@ Absolute Sicherheit ist nicht erreichbar und auch nicht bezahlbar!
 
 ![alt text](safety_vs_security.png)
 
+### Informations-Sicherheit, Cyber-Sicherheit und IT-Sicherheit
+
+Informations-Sicherheit
+- Schutz der Information als solche
+- Unabhängig vom Medium (Digital, Papier, Wissen in den Köpfen der Mitarbeiter)
+
+Cyber-Sicherheit / Internet-Sicherheit
+- Schutz von Internet-basierten Systemen und Anwendungen
+
+IT-Sicherheit
+- Schutz von Informations- und Kommunikations-Systeme gegen Gefahren und Angriffe
+
+![alt text](it-sicherheit.png)
+
+### Informations-Sicherheit vs. Datenschutz
+
+Informations-Sicherheit
+- Schutz aller Daten und Informationen durch Massnahmen
+- Ziel ist es mögliche Schwachstellen und Bedrohungen zu identifizieren, um entsprechende Massnahmen von Vorfällen zu minimieren
+- Regelungen durch Gesetze, Standards und Normen (ISO/IEC 27001)
+
+Datenschutz
+- Basiert auf dem Grundrecht zur informationellen Selbstbestimmung
+- Jede Person darf über die Verarbeitung, Verwendung und Weitergabe der persönlichen Daten entscheiden
+- Ziel ist der Schutz personen-bezogenen Daten
+- Regelung durch Schweizer Datenschutzgesetz (DSG) und Vorgaben der Branchen
+
+## Risiko
+
+Definition: Unter einem Risiko ist ein eventuelles, durch Eintrittswahrscheinlichkeit und Auswirkung bewertetes Ereignis, das einen negativen Einfluss hat.
+
+```
+Risiko = Wahrscheinlichkeit oder Eintretenshäufigkeit * Schadensausmass
+```
+
+# GrundSchutzziele der Informationssicherheit
+
+C-I-A
+
+- Confidentiality
+    - Ist gegeben wenn sichergestellt wird, dass Informationen nicht durch unautorisierte Personen, Instanzen oder Prozesse eingesehen werden
+- Integrity
+    - Ist gewährleistet wenn Daten oder Systeme nicht unautorisiert manipuliert werden
+- Availablility
+    - Ist gewährleistet wenn der Benutzer in gewunschter Zeit auf Dienste oder Informationen zugreifen kann
+
+
+
