@@ -11,6 +11,7 @@
 
 # Navigation
 
+- [Lernziele](/1.BA/ISF_K.H2501/lernziele/notes.md)
 - [SW01 Einführung Informationssicherheit](/1.BA/ISF_K.H2501/SW01/notes.md)
 - [SW02 Informationssicherheit](/1.BA/ISF_K.H2501/SW02/notes.md)
 - [SW03 Intercepten](/1.BA/ISF_K.H2501/SW03/notes.md)
