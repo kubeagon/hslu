@@ -11,6 +11,6 @@
 
 # Navigation 
 
-- [M01 Networking Today](/1.BA/NETW1_K.H2501/SW01/notes.md)
+- [M01 Networking Today](/1.BA/NETW1_K.H2501/M01/notes.md)
 - [M02 Basic Switch and Device Configuration](/1.BA/NETW1_K.H2501/M02/notes.md)
 - [M03 Protocols and Models](/1.BA/NETW1_K.H2501/M03/notes.md)
