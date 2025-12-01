@@ -2,17 +2,42 @@
 
 ## Question 1
 
+![alt text](image.png)
+
 ## Question 2
+
+![alt text](image-1.png)
+
+Memorize
+
+```
+128 /25
+192 /26
+224 /27
+240 /28
+248 /29
+252 /30
+```
 
 ## Question 3
 
+![alt text](image-2.png)
+
 ## Question 4
+
+![alt text](image-3.png)
 
 ## Question 5
 
+![alt text](image-4.png)
+
 ## Question 6
 
+![alt text](image-5.png)
+
 ## Question 7
+
+
 
 ## Question 8
 
