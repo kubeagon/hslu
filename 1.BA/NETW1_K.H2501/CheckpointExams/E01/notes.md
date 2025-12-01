@@ -1,6 +1,6 @@
 # Exam: Basic Network Connectivity and Communications
 
-> [!INFO]
+> [!NOTE]
 > These answers pass the exam with 94%!
 
 ## Question 1

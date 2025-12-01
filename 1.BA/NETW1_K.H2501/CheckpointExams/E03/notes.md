@@ -1,6 +1,6 @@
 # Exam Communicating between Networks
 
-> [!INFO]
+> [!NOTE]
 > These answers pass the exam with 97%!
 
 ## Question 1
