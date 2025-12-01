@@ -1,3 +1,19 @@
+# Navigation
+
+- [IOS Navigation](#ios-navigation)
+    - [Primary Command Modes](#primary-command-modes)
+    - [Configuration Mode und Subconfiguration Mode](#configuration-mode-und-subconfiguration-mode)
+    - [Navigate between IOS Modes](#navigate-between-ios-modes)
+- [Basic Device Configuration](#basic-device-configuration)
+    - [Device Names](#device-names)
+    - [Configure Passwords](#configure-passwords)
+    - [Encrypt Passwords](#encrypt-passwords)
+    - [Banner Messages](#banner-messages)
+- [Configuration](#configuration)
+    - [Altering the Running Config](#altering-the-running-config)
+- [Ports and Addresses](#ports-and-addresses)
+    - [Switch Virtual Interface Configuration](#switch-virtual-interface-configuration)
+
 # IOS Navigation
 
 ## Primary Command Modes
