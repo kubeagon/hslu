@@ -1,5 +1,19 @@
 # Navigation
 
+- [Rules](#rules-protocols)
+    - [Rule Establishment](#rule-establishment)
+    - [Network Protocol Requirements](#network-protocol-requirements)
+- [Protocols](#protocols)
+    - [Types of Protocols](#types-of-protocols)
+    - [Protocol Functions](#protocol-functions)
+- [Protocol Suites](#protocol-suites)
+- [Data Encapsulation](#data-encapsulation)
+    - [Segmenting Messages](#segmenting-messages)
+    - [Protocol Data Units](#protocol-data-units)
+- [Data Access](#data-access)
+    - [Addresses](#addresses)
+    - [Layer 3 Logical Address](#layer-3-logical-address)
+
 # Rules (Protocols)
 
 - Message source (sender)
