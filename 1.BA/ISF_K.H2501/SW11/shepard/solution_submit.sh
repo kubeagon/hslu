@@ -1,0 +1,19 @@
+curl 'https://shepherd.hs25.isf.hslu-edu.ch/solutionSubmit' \
+  -X POST \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0' \
+  -H 'Accept: */*' \
+  -H 'Accept-Language: en-US,en;q=0.5' \
+  -H 'Accept-Encoding: gzip, deflate, br, zstd' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'Origin: https://shepherd.hs25.isf.hslu-edu.ch' \
+  -H 'Connection: keep-alive' \
+  -H 'Referer: https://shepherd.hs25.isf.hslu-edu.ch/index.jsp' \
+  -H 'Cookie: JSESSIONID=9F62C20DD8AB8D617F2063ACB068E1DE; token=-139144933759621248217061075988243322970' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'DNT: 1' \
+  -H 'Sec-GPC: 1' \
+  -H 'TE: trailers' \
+  --data-raw 'moduleId=ca8233e0398ecfa76f9e05a49d49f4a7ba390d07&solutionKey=68DC6197C2B7746163292EA6C5BFFBCAD44B0C9A150FB88E6FF2DAED9B4FE662656FF4885045B985B11866BA96220DEF81CAD1C0D5424158F21A56E5C020C0F1&csrfToken=-139144933759621248217061075988243322970'

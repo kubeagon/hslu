@@ -15,7 +15,8 @@
     - [Small Office Internet Connections](#home-and-small-office-internet-connections)
     - [Business Internet Connections](#businesses-internet-connections)
     - [Converging Networks](#the-converging-network)
-
+- [Reliable Networks](#reliable-networks)
+    - [Network Architecture](#network-architecture)
 
 # Network Componants
 
@@ -180,3 +181,36 @@ Intranet is used to refer to a private connection of LANs and WANs that belong t
 ## The Converging Network
 
 Today, the separate data, telephone, and video networks converge. Unlike dedicated networks, converged networks are capable of delivering data, voice, and video between many different types of devices over the same network infrastructure. This network infrastructure uses the same set of rules, agreements, and implementation standards. Converged data networks carry multiple services on one network.
+
+# Reliable Networks
+
+## Network Architecture
+
+Networks support a wide range of applications and services. They must operate over many different types of cables and devices, which make up the physical infrastructure. The term network architecture, in this context, refers tp the technologies that support the infrastructure and the programmed services and rules, or protocols that move data accross the network.
+
+There are four basic characteristics that must be addressed to meet user expectations:
+
+- Fault Tolerance
+- Scalability
+- Quality of Service (QoS)
+- Security
+
+### Fault Tolerance
+
+Limits the number of affected devices during a failure. These networks depend on multiple paths between source and destination. If one path fails, messages are sent over a different link. This is called redundancy.
+One way of providing such redundancy is through packet-switching, where traffic is split into packets that are routed over a shared network.
+
+### Scalability
+
+A scalable network expands quickly to support new users and applications without degrading the performance of services that are being accessed by existing users.
+
+### Quality of Service
+
+QoS is a mechanism to manage congestion and ensuring reliable delivery of content to all users. Contgestion occurs when the demand for bandwidth exceeds the amount available. Devices will hold packets in memory until they can be transmitted. With a QoS policy in place the router can manage the flow of data, giving priority to time sensitive-traffic.
+
+### Network Security
+
+Securing the network includes physically security devices that provide the network connectivity and preventing unauthorized access to the management software.
+
+
+
