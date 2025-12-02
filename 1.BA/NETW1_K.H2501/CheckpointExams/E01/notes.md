@@ -5,7 +5,7 @@
 
 ## Question 1
 
-![alt text](question1.png)
+![alt text](question01.png)
 
 ### Answer
 
