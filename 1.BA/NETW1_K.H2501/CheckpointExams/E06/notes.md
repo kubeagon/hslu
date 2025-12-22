@@ -159,3 +159,7 @@ That is an APIPA address (169.254.x.x) assigned by Windows when DHCP fails.
 ## Question 35
 
 ![alt text](question35.png)
+
+# Question 36
+
+![alt text](question36.png)

