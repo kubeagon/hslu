@@ -1,47 +1,45 @@
 <!-- vscode-markdown-toc -->
-* 1. [Table of Contents](#TableofContents)
-* 2. [Zeichen](#Zeichen)
-* 3. [Kommentare](#Kommentare)
-* 4. [Konstanten](#Konstanten)
-* 5. [Datentypen in Java](#DatentypeninJava)
-	* 5.1. [Wertebereich (Byte)](#WertebereichByte)
-* 6. [Arithmetische Operatoren](#ArithmetischeOperatoren)
-* 7. [Logische Operatoren](#LogischeOperatoren)
-* 8. [Relationale Operatoren](#RelationaleOperatoren)
-* 9. [Typumwandelung (Typecast)](#TypumwandelungTypecast)
-* 10. [Auswertungsreihenfolge & Assoziativitätsregeln](#AuswertungsreihenfolgeAssoziativittsregeln)
-	* 10.1. [Assoziativität](#Assoziativitt)
-	* 10.2. [Reihenfolge](#Reihenfolge)
-* 11. [Arrays](#Arrays)
-	* 11.1. [Speicher Referenzierung und Arrays](#SpeicherReferenzierungundArrays)
-	* 11.2. [Mehrdimensionale Arrays](#MehrdimensionaleArrays)
-* 12. [Kontrollstrukturen](#Kontrollstrukturen)
-	* 12.1. [Sequenz](#Sequenz)
-	* 12.2. [Selektion](#Selektion)
-	* 12.3. [Iteration](#Iteration)
-* 13. [Sprunganweisungen](#Sprunganweisungen)
-* 14. [Klassen als strukturierter Datentyp](#KlassenalsstrukturierterDatentyp)
-* 15. [Objekte](#Objekte)
-* 16. [Methoden](#Methoden)
-	* 16.1. [Kassenmethode](#Kassenmethode)
-	* 16.2. [Objekt- oder Instanz-methode](#Objekt-oderInstanz-methode)
+* 1. [Zeichen](#Zeichen)
+* 2. [Kommentare](#Kommentare)
+* 3. [Konstanten](#Konstanten)
+* 4. [Datentypen in Java](#DatentypeninJava)
+	* 4.1. [Wertebereich (Byte)](#WertebereichByte)
+* 5. [Arithmetische Operatoren](#ArithmetischeOperatoren)
+* 6. [Logische Operatoren](#LogischeOperatoren)
+* 7. [Relationale Operatoren](#RelationaleOperatoren)
+* 8. [Typumwandelung (Typecast)](#TypumwandelungTypecast)
+* 9. [Auswertungsreihenfolge & Assoziativitätsregeln](#AuswertungsreihenfolgeAssoziativittsregeln)
+	* 9.1. [Assoziativität](#Assoziativitt)
+	* 9.2. [Reihenfolge](#Reihenfolge)
+* 10. [Arrays](#Arrays)
+	* 10.1. [Speicher Referenzierung und Arrays](#SpeicherReferenzierungundArrays)
+	* 10.2. [Mehrdimensionale Arrays](#MehrdimensionaleArrays)
+* 11. [Kontrollstrukturen](#Kontrollstrukturen)
+	* 11.1. [Sequenz](#Sequenz)
+	* 11.2. [Selektion](#Selektion)
+	* 11.3. [Iteration](#Iteration)
+* 12. [Sprunganweisungen](#Sprunganweisungen)
+* 13. [Klassen als strukturierter Datentyp](#KlassenalsstrukturierterDatentyp)
+* 14. [Objekte](#Objekte)
+* 15. [Methoden](#Methoden)
+	* 15.1. [Kassenmethode](#Kassenmethode)
+	* 15.2. [Objekt- oder Instanz-methode](#Objekt-oderInstanz-methode)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc --># Java Basics
-
-##  1. <a name='TableofContents'></a>Table of Contents
+<!-- /vscode-markdown-toc -->
 
 
+# Java Basics
 
-##  2. <a name='Zeichen'></a>Zeichen
+##  1. <a name='Zeichen'></a>Zeichen
 
 Zeichenvorrat: ASCII und ISO-Latin-1 (ISO 8859-1)
 Zeichensatz: Unicode mit Format UTF-16 (2 Bytes oder 4 Bytes pro Zeichen)
 
-##  3. <a name='Kommentare'></a>Kommentare
+##  2. <a name='Kommentare'></a>Kommentare
 
 Einzeilige Kommentare:
 
@@ -65,7 +63,7 @@ Dokumentationslommentare:
 */
 ```
 
-##  4. <a name='Konstanten'></a>Konstanten
+##  3. <a name='Konstanten'></a>Konstanten
 
 Symbolische Konstante:
 
@@ -79,29 +77,29 @@ Literale Konstante:
 double endZahl = 10;
 ```
 
-##  5. <a name='DatentypeninJava'></a>Datentypen in Java
+##  4. <a name='DatentypeninJava'></a>Datentypen in Java
 
 ![alt text](datentypen.png)
 
-###  5.1. <a name='WertebereichByte'></a>Wertebereich (Byte)
+###  4.1. <a name='WertebereichByte'></a>Wertebereich (Byte)
 
 - 8 Bits bedeutet 2^8 = 256 Kombinationen von 1 und 0
 - Dies wird für den Positiven und Negativen Bereich halbiert (128 Kombinationen)
 - Null wird dem positiven Bereich zugeteil (-128 bis +127)
 
-##  6. <a name='ArithmetischeOperatoren'></a>Arithmetische Operatoren
+##  5. <a name='ArithmetischeOperatoren'></a>Arithmetische Operatoren
 
 ![alt text](arithmetisch.png)
 
-##  7. <a name='LogischeOperatoren'></a>Logische Operatoren
+##  6. <a name='LogischeOperatoren'></a>Logische Operatoren
 
 ![alt text](logisch.png)
 
-##  8. <a name='RelationaleOperatoren'></a>Relationale Operatoren
+##  7. <a name='RelationaleOperatoren'></a>Relationale Operatoren
 
 ![alt text](relational.png)
 
-##  9. <a name='TypumwandelungTypecast'></a>Typumwandelung (Typecast)
+##  8. <a name='TypumwandelungTypecast'></a>Typumwandelung (Typecast)
 
 Implizite Typumwandlung: (Implizit nur wenn von einem "engeren" Typ zu einem "breiteren")
 
@@ -132,9 +130,9 @@ public class ExplicitCastExample {
 ```
 
 
-##  10. <a name='AuswertungsreihenfolgeAssoziativittsregeln'></a>Auswertungsreihenfolge & Assoziativitätsregeln
+##  9. <a name='AuswertungsreihenfolgeAssoziativittsregeln'></a>Auswertungsreihenfolge & Assoziativitätsregeln
 
-###  10.1. <a name='Assoziativitt'></a>Assoziativität
+###  9.1. <a name='Assoziativitt'></a>Assoziativität
 
 - linksassoziaztive Operatoren
     - Prä- und Postfix-Inkrement und -Dekrement (++a, a++, --a, a--)
@@ -147,7 +145,7 @@ public class ExplicitCastExample {
 - rechtsassoziative Operatoren
     - alle anderen Operatoren
 
-###  10.2. <a name='Reihenfolge'></a>Reihenfolge
+###  9.2. <a name='Reihenfolge'></a>Reihenfolge
 
 1. Indexoperator, Methodenaufruf, Komponentenzugriff
 2. Prä- und Postfix-Inkrement und -Dekrement, Vorzeichen, logisches Nicht
@@ -158,7 +156,7 @@ public class ExplicitCastExample {
 13. ...
 14. Zuweisungen
 
-##  11. <a name='Arrays'></a>Arrays
+##  10. <a name='Arrays'></a>Arrays
 
 Deklaration: `Datentyp[] Variablenname;``
 
@@ -190,7 +188,7 @@ Zugriff auf Arrayelemente über den Index: `Arraynamen[Indexwert]``
 String firstKanton = gemeinden[0]; // firstKanton equals Bern
 ```
 
-###  11.1. <a name='SpeicherReferenzierungundArrays'></a>Speicher Referenzierung und Arrays
+###  10.1. <a name='SpeicherReferenzierungundArrays'></a>Speicher Referenzierung und Arrays
 
 Wenn ein Array einem Array zugewiesen wird, wird keine Kopie erstellt, sondern es zeigen beide Arrays auf den gleichen Speicher.
 
@@ -210,7 +208,7 @@ for (int i = 0; i < arrA.length; i++) {
 }
 ```
 
-###  11.2. <a name='MehrdimensionaleArrays'></a>Mehrdimensionale Arrays
+###  10.2. <a name='MehrdimensionaleArrays'></a>Mehrdimensionale Arrays
 
 Java kennt auch zweidimensionale und dreidimensionale Arrays. Folgend ein Beispiel eines zweidimensionalen Arrays:
 
@@ -224,13 +222,13 @@ int[][] tabelle = new int[anzZeilen][anzSpalten];
 tabelle[0][1] = 3;
 ```
 
-##  12. <a name='Kontrollstrukturen'></a>Kontrollstrukturen
+##  11. <a name='Kontrollstrukturen'></a>Kontrollstrukturen
 
 - Sequenz: Abfolge von Befehlen
 - Selektion: Verzweigun
 - Iteration: Schleifen
 
-###  12.1. <a name='Sequenz'></a>Sequenz
+###  11.1. <a name='Sequenz'></a>Sequenz
 
 ```java
 double a = 99;
@@ -239,7 +237,7 @@ double resultat = a / b;
 System.out.println("Resultat: " + resultat);
 ```
 
-###  12.2. <a name='Selektion'></a>Selektion
+###  11.2. <a name='Selektion'></a>Selektion
 
 If Else Selektion:
 
@@ -273,7 +271,7 @@ switch (nummer) {
 }
 ```
 
-###  12.3. <a name='Iteration'></a>Iteration
+###  11.3. <a name='Iteration'></a>Iteration
 
 For-Schlaufen:
 
@@ -324,7 +322,7 @@ do {
 } while (wahl != 0);
 ```
 
-##  13. <a name='Sprunganweisungen'></a>Sprunganweisungen
+##  12. <a name='Sprunganweisungen'></a>Sprunganweisungen
 
 Break:
 
@@ -362,7 +360,7 @@ for (int i = 0; i < arr.length; i++) {
 }
 ```
 
-##  14. <a name='KlassenalsstrukturierterDatentyp'></a>Klassen als strukturierter Datentyp
+##  13. <a name='KlassenalsstrukturierterDatentyp'></a>Klassen als strukturierter Datentyp
 
 - Elementare (primitive) Datentypen sind atomar und können nicht weiter zerlegt werden
 - Strukturierte Datentypen packen zusammen was logisch zusammen gehört
@@ -378,7 +376,7 @@ class Raum {
 }
 ```
 
-##  15. <a name='Objekte'></a>Objekte
+##  14. <a name='Objekte'></a>Objekte
 
 Objekte werden mit Hilfe der Mutter-Klasse erstellt, wobei die Klasse als Vorlage dient. Ein Objekt ist eine konkrete Ausprägung / Instanz einer Klasse.
 
@@ -398,7 +396,7 @@ Der Zugriff auf Komponente eines Objekts funktioniert folgendermassen:
 raum322.anzahlPlaetze = 35;
 ```
 
-##  16. <a name='Methoden'></a>Methoden
+##  15. <a name='Methoden'></a>Methoden
 
 Eine Methode besteht aus Anweisungen, die zwecks Lösung einer Aufgabe zusammengefasst und mit einem aussagekräftigen Namen versehen wurden. Eine Methode kann an einer beliebigen Stelle im Programm über den Namen der Methode aufgerufen werden.
 
@@ -446,7 +444,7 @@ public class Demo {
 }
 ```
 
-###  16.1. <a name='Kassenmethode'></a>Kassenmethode
+###  15.1. <a name='Kassenmethode'></a>Kassenmethode
 
 Eine Klassenmethode gehört einer Klasse und wird mit dem Modifikator static versehen. Mit der Math Klasse demonstriert:
 
@@ -454,7 +452,7 @@ Eine Klassenmethode gehört einer Klasse und wird mit dem Modifikator static ver
 double resultat = Math.pow(2,10);
 ```
 
-###  16.2. <a name='Objekt-oderInstanz-methode'></a>Objekt- oder Instanz-methode
+###  15.2. <a name='Objekt-oderInstanz-methode'></a>Objekt- oder Instanz-methode
 
 Instanzmethoden haben keinen Modifikator static und können ausschliesslich über die Referenz auf eine Instanz der Klasse aufgerufen werden:
 
