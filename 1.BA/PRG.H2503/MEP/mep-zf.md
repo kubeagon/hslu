@@ -1,3 +1,5 @@
+# Java Basics
+
 <!-- vscode-markdown-toc -->
 * 1. [Zeichen](#Zeichen)
 * 2. [Kommentare](#Kommentare)
@@ -30,9 +32,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-
-# Java Basics
 
 ##  1. <a name='Zeichen'></a>Zeichen
 
