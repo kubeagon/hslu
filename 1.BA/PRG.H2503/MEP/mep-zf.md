@@ -1,10 +1,47 @@
-# Java Basics
+<!-- vscode-markdown-toc -->
+* 1. [Table of Contents](#TableofContents)
+* 2. [Zeichen](#Zeichen)
+* 3. [Kommentare](#Kommentare)
+* 4. [Konstanten](#Konstanten)
+* 5. [Datentypen in Java](#DatentypeninJava)
+	* 5.1. [Wertebereich (Byte)](#WertebereichByte)
+* 6. [Arithmetische Operatoren](#ArithmetischeOperatoren)
+* 7. [Logische Operatoren](#LogischeOperatoren)
+* 8. [Relationale Operatoren](#RelationaleOperatoren)
+* 9. [Typumwandelung (Typecast)](#TypumwandelungTypecast)
+* 10. [Auswertungsreihenfolge & Assoziativitätsregeln](#AuswertungsreihenfolgeAssoziativittsregeln)
+	* 10.1. [Assoziativität](#Assoziativitt)
+	* 10.2. [Reihenfolge](#Reihenfolge)
+* 11. [Arrays](#Arrays)
+	* 11.1. [Speicher Referenzierung und Arrays](#SpeicherReferenzierungundArrays)
+	* 11.2. [Mehrdimensionale Arrays](#MehrdimensionaleArrays)
+* 12. [Kontrollstrukturen](#Kontrollstrukturen)
+	* 12.1. [Sequenz](#Sequenz)
+	* 12.2. [Selektion](#Selektion)
+	* 12.3. [Iteration](#Iteration)
+* 13. [Sprunganweisungen](#Sprunganweisungen)
+* 14. [Klassen als strukturierter Datentyp](#KlassenalsstrukturierterDatentyp)
+* 15. [Objekte](#Objekte)
+* 16. [Methoden](#Methoden)
+	* 16.1. [Kassenmethode](#Kassenmethode)
+	* 16.2. [Objekt- oder Instanz-methode](#Objekt-oderInstanz-methode)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc --># Java Basics
+
+##  1. <a name='TableofContents'></a>Table of Contents
+
+
+
+##  2. <a name='Zeichen'></a>Zeichen
 
 Zeichenvorrat: ASCII und ISO-Latin-1 (ISO 8859-1)
-
 Zeichensatz: Unicode mit Format UTF-16 (2 Bytes oder 4 Bytes pro Zeichen)
 
-## Kommentare
+##  3. <a name='Kommentare'></a>Kommentare
 
 Einzeilige Kommentare:
 
@@ -28,7 +65,7 @@ Dokumentationslommentare:
 */
 ```
 
-## Konstanten
+##  4. <a name='Konstanten'></a>Konstanten
 
 Symbolische Konstante:
 
@@ -42,29 +79,29 @@ Literale Konstante:
 double endZahl = 10;
 ```
 
-## Datentypen in Java
+##  5. <a name='DatentypeninJava'></a>Datentypen in Java
 
 ![alt text](datentypen.png)
 
-### Wertebereich (Byte)
+###  5.1. <a name='WertebereichByte'></a>Wertebereich (Byte)
 
 - 8 Bits bedeutet 2^8 = 256 Kombinationen von 1 und 0
 - Dies wird für den Positiven und Negativen Bereich halbiert (128 Kombinationen)
 - Null wird dem positiven Bereich zugeteil (-128 bis +127)
 
-## Arithmetische Operatoren
+##  6. <a name='ArithmetischeOperatoren'></a>Arithmetische Operatoren
 
 ![alt text](arithmetisch.png)
 
-## Logische Operatoren
+##  7. <a name='LogischeOperatoren'></a>Logische Operatoren
 
 ![alt text](logisch.png)
 
-## Relationale Operatoren
+##  8. <a name='RelationaleOperatoren'></a>Relationale Operatoren
 
 ![alt text](relational.png)
 
-## Typumwandelung (Typecast)
+##  9. <a name='TypumwandelungTypecast'></a>Typumwandelung (Typecast)
 
 Implizite Typumwandlung: (Implizit nur wenn von einem "engeren" Typ zu einem "breiteren")
 
@@ -95,9 +132,9 @@ public class ExplicitCastExample {
 ```
 
 
-## Auswertungsreihenfolge & Assoziativitätsregeln
+##  10. <a name='AuswertungsreihenfolgeAssoziativittsregeln'></a>Auswertungsreihenfolge & Assoziativitätsregeln
 
-### Assoziativität
+###  10.1. <a name='Assoziativitt'></a>Assoziativität
 
 - linksassoziaztive Operatoren
     - Prä- und Postfix-Inkrement und -Dekrement (++a, a++, --a, a--)
@@ -110,7 +147,7 @@ public class ExplicitCastExample {
 - rechtsassoziative Operatoren
     - alle anderen Operatoren
 
-### Reihenfolge
+###  10.2. <a name='Reihenfolge'></a>Reihenfolge
 
 1. Indexoperator, Methodenaufruf, Komponentenzugriff
 2. Prä- und Postfix-Inkrement und -Dekrement, Vorzeichen, logisches Nicht
@@ -121,7 +158,7 @@ public class ExplicitCastExample {
 13. ...
 14. Zuweisungen
 
-## Arrays
+##  11. <a name='Arrays'></a>Arrays
 
 Deklaration: `Datentyp[] Variablenname;``
 
@@ -153,7 +190,7 @@ Zugriff auf Arrayelemente über den Index: `Arraynamen[Indexwert]``
 String firstKanton = gemeinden[0]; // firstKanton equals Bern
 ```
 
-### Speicher Referenzierung und Arrays
+###  11.1. <a name='SpeicherReferenzierungundArrays'></a>Speicher Referenzierung und Arrays
 
 Wenn ein Array einem Array zugewiesen wird, wird keine Kopie erstellt, sondern es zeigen beide Arrays auf den gleichen Speicher.
 
@@ -173,7 +210,7 @@ for (int i = 0; i < arrA.length; i++) {
 }
 ```
 
-### Mehrdimensionale Arrays
+###  11.2. <a name='MehrdimensionaleArrays'></a>Mehrdimensionale Arrays
 
 Java kennt auch zweidimensionale und dreidimensionale Arrays. Folgend ein Beispiel eines zweidimensionalen Arrays:
 
@@ -187,13 +224,13 @@ int[][] tabelle = new int[anzZeilen][anzSpalten];
 tabelle[0][1] = 3;
 ```
 
-## Kontrollstrukturen
+##  12. <a name='Kontrollstrukturen'></a>Kontrollstrukturen
 
 - Sequenz: Abfolge von Befehlen
 - Selektion: Verzweigun
 - Iteration: Schleifen
 
-### Sequenz
+###  12.1. <a name='Sequenz'></a>Sequenz
 
 ```java
 double a = 99;
@@ -202,7 +239,7 @@ double resultat = a / b;
 System.out.println("Resultat: " + resultat);
 ```
 
-### Selektion
+###  12.2. <a name='Selektion'></a>Selektion
 
 If Else Selektion:
 
@@ -236,7 +273,7 @@ switch (nummer) {
 }
 ```
 
-### Iteration
+###  12.3. <a name='Iteration'></a>Iteration
 
 For-Schlaufen:
 
@@ -287,7 +324,7 @@ do {
 } while (wahl != 0);
 ```
 
-## Sprunganweisungen
+##  13. <a name='Sprunganweisungen'></a>Sprunganweisungen
 
 Break:
 
@@ -324,6 +361,116 @@ for (int i = 0; i < arr.length; i++) {
 // Prints 1234 because continue doesn't stop at arr[3] which is null
 }
 ```
+
+##  14. <a name='KlassenalsstrukturierterDatentyp'></a>Klassen als strukturierter Datentyp
+
+- Elementare (primitive) Datentypen sind atomar und können nicht weiter zerlegt werden
+- Strukturierte Datentypen packen zusammen was logisch zusammen gehört
+- Beispiele strukturierte Daten: Punkt(x,y), Datum(Jahr, Monat, Tag), ...
+
+Raum als strukturierter Typ in Java:
+
+```java
+class Raum {
+    String raumBezeichnung;
+    int anzahlPlaetze;
+    boolean klimatisiert;
+}
+```
+
+##  15. <a name='Objekte'></a>Objekte
+
+Objekte werden mit Hilfe der Mutter-Klasse erstellt, wobei die Klasse als Vorlage dient. Ein Objekt ist eine konkrete Ausprägung / Instanz einer Klasse.
+
+```java
+// Syntax Objekt erstellen
+DATENTPY < REFERENZVAIABLE > = new < KLASSENNAME >();
+```
+Beispiel mit der Klasse Raum:
+
+```java
+Raum raum322 = new Raum();
+```
+
+Der Zugriff auf Komponente eines Objekts funktioniert folgendermassen:
+
+```java
+raum322.anzahlPlaetze = 35;
+```
+
+##  16. <a name='Methoden'></a>Methoden
+
+Eine Methode besteht aus Anweisungen, die zwecks Lösung einer Aufgabe zusammengefasst und mit einem aussagekräftigen Namen versehen wurden. Eine Methode kann an einer beliebigen Stelle im Programm über den Namen der Methode aufgerufen werden.
+
+```java
+// Syntax Methode
+< MODIFIKATOR(EN) > < RUECKGABEWERT_TYP > < METHODENNAME > (< PARAMETERLISTE >) {
+// Implementierung (Methodenrumpf) …
+}
+```
+
+Beispiel anhand der Methode `main`:
+
+```java
+public static void main(String[] args) {
+    // Implementation
+}
+```
+
+Beispiel mit einer Methode die die Summe aller Zahlen in einem vorgegebenen Bereich berechnet:
+
+```java
+public class Demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Untere Grenze Eingeben: ");
+        int von = sc.nextInt();
+
+        System.out.println("Obere Grenze EIngeben: ");
+        int bis = sc.nextInt();
+
+        int summe = berechneSumme(von, bis);
+
+        System.out.println("Summe aller Zahlen von %d bis %d ist %d\n", von, bis, summe);
+    }
+
+    public static int berechneSumme (int von, int bis) {
+        int summe = 0;
+
+        for (int i = von; i <= bis; i++) {
+            summe += i;
+        }
+        return summe;
+    }
+}
+```
+
+###  16.1. <a name='Kassenmethode'></a>Kassenmethode
+
+Eine Klassenmethode gehört einer Klasse und wird mit dem Modifikator static versehen. Mit der Math Klasse demonstriert:
+
+```java
+double resultat = Math.pow(2,10);
+```
+
+###  16.2. <a name='Objekt-oderInstanz-methode'></a>Objekt- oder Instanz-methode
+
+Instanzmethoden haben keinen Modifikator static und können ausschliesslich über die Referenz auf eine Instanz der Klasse aufgerufen werden:
+
+```java
+Scanner keyboard = new Scanner(System.in);
+
+int a = keyboard.nextInt();
+String text = keyboard.nextLine();
+
+System.out.println(text.toUpperCase());
+int strLaenge = text.length();
+```
+
+
+
+
 
 
 
