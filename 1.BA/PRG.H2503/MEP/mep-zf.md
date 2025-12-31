@@ -619,7 +619,220 @@ Klassenvariablen
     - Sie hat den Wert null und "zeigt" auf kein Objekt.
     - Der Versuch, über eine null-Referenz eine Methode aufzurufen wird mit einer Ausnahme (NullPointerException) quittiert.
 
+## Vererbung
 
+- Vererbung heisst das die Vorfahren ihre Eigenschaften und Fähigkeiten an ihr Nachkommen weitergeben
+- Falsch eingesetzte Vererbung kann zu grossen Problemen führen und muss nicht zwingend immer eingesetzt werden, da sie zu einer starken Koppelung führt → schlechtes Design
+
+### Super- und Subklassen
+
+- Superklasse (auch Oberklasse oder Basisklasse)
+    - Gibt ihre Eigenschaften und Fähigkeiten (Attribute und Methoden) an eine weitere Klasse
+- Subklasse (auch Unterklasse oder Kindklasse)
+    - Übernimmt die Attribute und Methoden durch Vererbung einer Superklasse
+
+Die Beziehung zwischen Super- und Subklasse wird eine "ist ein" oder "is-a" genannt. Die Unterklasse ist vom gleichen Type der Oberklasse und kann überall dort eingesetzt werden wo eine Oberklassen-Instanz verlangt wird.
+
+### Generalisierung vs. Spezialisierung
+
+Die Vererbung kann auch über mehrere Ebenen gehen, wobei eine Vererbungshierarchie entsteht.
+
+- In einer solchen Hierarchie stellen die Oberklassen die Generalisierung der Unterklassen dar 
+    → Desto weiter oben in der Hierarchie desto weniger Unterschiede. Mehr shared Attribute & Methoden
+- Unterklassen stellen eine Spezialisierung der Oberklassen dar
+    → Desto weiter unten in der Hierarchie desto mehr Unterschiede. Weniger shared Attribute & Methoden
+
+### Vererbung in Java
+
+In Java wird die Vererbung mit Hilfe des Schlüsselwortes extends im Kopf der Unterklasse realisiert.
+
+Beispiel:
+
+```java
+public class Oberklasse {
+    // Attribute und Methoden
+}
+
+public class Unterklasse extends Oberklasse {
+    // Attribute und Methoden
+}
+```
+
+Hinweis zu Begriff "abgeleitet":
+- Wenn die Klasse B die Unterklasse der Klasse A ist, sagt man, dass die Klasse B von der Klasse A abgeleitet wird.
+- In unserem Beispiel würde dies heissen, dass die Klasse Student von der Klasse Person abgeleitet wird.
+
+### java.lang.Object
+
+Die Klasse java.lang.Objekt ist die implizite Basisklasse aller Klassen in Java
+
+- Wenn im Kopf der Klasse kein "extends" steht, wird diese Klasse automatisch davon abgeleitet
+- Methoden dieser Basisclasse stehen automatisch allen Klassen zur verfügung. Hier paar Beispiele:
+    - equals
+    - hashCode
+    - toString
+
+Methoden können Überschrieben werden wenn die Standartimplementierung nicht ausreicht.
+
+## Methoden Überschreiben
+
+Eine Methode kann überschrieben werden indem sie in der Unterklasse nochmals definiert wird. Falls auf die ursprünglich vererbte Methode zugegriffen werden muss, kann dies mit "super" gemacht werden:
+
+```java
+return super.toString()
+```
+
+Falls eine Methode nicht abgeändert werden soll, kann man diese mit dem Modifikator "final" versehen:
+
+```java
+public final void sehrWichtigeMethode (){
+    // Implementierung
+}
+```
+
+→ Dies kann auch bei Klassen verwendet werden die nicht abgeleitet werden können sollten
+
+## Konstruktoren in Unterklassen
+
+- Konstruktoren werden nicht vererbt und müssen in der Unterklasse explizit implementiert werden. (Ausser default Konstruktor)
+- Diese Implementierung ist jedoch abhängig der in der Oberklasse vorhandenen Konstruktoren
+- Jeder Konstruktor ist ausschliesslich für die Initialisierung der Instanzvariablen der eigenen Klasse
+
+Wenn die Oberklasse den Standardkonstruktor sowie auch Benutzerdefinierten verwendet:
+→ Ohne expliziten aufruf der Oberklassenkonstruktor wird der Standardkonstruktor verwendet.
+
+Der explizite Aufruf des Oberklassen-Konstruktors
+- erfolgt mit super(Parameterliste) und
+- muss immer in der ersten Zeile des Konstruktors der Unterklasse erfolgen
+
+Oberklasse hat nur den Standardkonstruktoren
+
+```java
+public class Person {
+    private String vorname;
+    private String nachname;
+
+    // public Person() {
+        
+    // }
+}
+
+public class Student extends Person {
+    private int matrikelNummer;
+
+    // public Student() {
+
+    // }
+}
+```
+Erstellung einer Student-Instanz
+- Da die Oberklasse Klassen den Standardkonstruktor hat, ist keine explizite Implementierung des Konstruktors in der Unterklasse Student nötig
+- Es wird keine explizite Aufruf des Standardkonstrukors der Oberklasse benötigt
+
+```java
+Student s = new Student();
+```
+
+Oberklasse hat nur einen parametisierten Konstruktor
+
+```java
+public class Person {
+    private String vorname;
+    private String nachname;
+
+    public Person(String vorname, String nachname){
+        this.vorname = vorname;
+        this.nachname = nachname;
+    }
+}
+
+public class Student extends Person {
+    private int matrikelNummer;
+
+    public Student(String vorname, String nachname, int matrikelNummer) {
+        super(vorname, nachname);
+        this.matrikelNummer = matrikelNummer;
+    }
+}
+```
+
+Erstellung einer Student-Instanz
+- Da die Klasse Person keinen Standardkonstruktor hat, muss ein anderer Person-Konstruktor im Student-Konstruktor explizit aufgerufen werden
+
+```java
+Student s = new Student("Beat", "Weber", 8767);
+```
+
+## Typumwandelung (Type Cast) bei Referenzen
+
+Gleich wie bei elementaren Typen (8.) gibt es auch implizite (automatische) und explizite Typumwandelungen
+- Implizit: wenn ein Unterklassentyp in einen Oberklassentyp umgewandelt wird
+- Explizit: wenn ein Oberklassentyp in ein Unterklassentyp umgewandelt wird
+
+### Statischer vs. dynamischer Typ
+
+- Ein statischer Referenztyp ist der Typ der bei Deklaration der Referenzvariable angegeben wird
+- Ein dynamischer Referenztyp ist identisch dem Typ des erzeugeten Objekts
+
+```java
+Person person = new Student();
+// Person = statischer deklarierter Typ
+// Student(); = dynamischer Laufzeit Typ
+```
+
+Upcasting (implizite Typumwandelung)
+- Der speziefischere Typ (Student und BscCybersecurity) werden automatisch in den allgemeineren Typ (Person und Student) umgewandelt
+
+```java
+Person Student = new Student();
+Student s = new BscCybersecurity();
+```
+
+Downcasting (explizite Typumwandelung)
+
+```java
+Student s = new Person(); // Syntaxfehler! Wird nicht compiliert
+Student s = (Student) new Person(); // Syntaktisch korrekt, wirft aber ClassCastException!
+```
+
+## Abstrakte Basisclassen
+
+Eine abstrakte Klasse ist eine Klasse, die nicht instanziiert werden kann, da sie eine Abstraktion darstellt
+
+```java
+public abstract class Fahrzeug {
+    // Implementierung
+}
+```
+
+Es kommt vor, das eine oder mehrere Methoden nicht in der Basisklasse sinnvoll implementiert werden können, da die Implementierung Typ/Klassenspeziefisch ist. In solchen Fälle wird in der Basisklassen nur die Schnittstelle der Methode definiert während die Implementierung nicht angegeben wird. Eine solche Methode wird abstrakte Methode genannt.
+- Diese Methoden müssen zwingend mit dem Modifikator `abstract` versehen werden
+- Wenn eine Klasse mindenstens eine abstrakte Klasse hat wird sie automatisch zu einer abstrakten Klasse und muss mit dem Modifikator `abstract` versehen werden
+
+```java
+public abstract class Figur {
+    private int x,
+    private int y,
+
+    public abstract double berechneUmfang();
+    public abstract double berechneFlaeche();
+
+    // set- und get-Methoden
+}
+
+public class Kreis extends Figur {
+    private int radius;
+
+    public double berechneUmfang() {
+        // Implementierung
+    }
+    public double berechneFlaeche() {
+        // Implementierung
+    }
+
+    // set- und get-Methoden
+}
+```
 
 
 
