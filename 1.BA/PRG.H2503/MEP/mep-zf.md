@@ -51,6 +51,11 @@
 * 20. [Typumwandelung (Type Cast) bei Referenzen](#TypumwandelungTypeCastbeiReferenzen)
 	* 20.1. [Statischer vs. dynamischer Typ](#Statischervs.dynamischerTyp)
 * 21. [Abstrakte Basisclassen](#AbstrakteBasisclassen)
+* 22. [Polymorphie](#Polymorphie)
+	* 22.1. [Polymorphie von Methoden](#PolymorphievonMethoden)
+	* 22.2. [Überschreiben von Methoden](#berschreibenvonMethoden)
+	* 22.3. [Polymorphie von Objekten](#PolymorphievonObjekten)
+	* 22.4. [Polymorphie von Klassen (Generics)](#PolymorphievonKlassenGenerics)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -843,6 +848,210 @@ public class Kreis extends Figur {
     // set- und get-Methoden
 }
 ```
+
+##  22. <a name='Polymorphie'></a>Polymorphie
+
+###  22.1. <a name='PolymorphievonMethoden'></a>Polymorphie von Methoden
+
+- Überladen: Wenn eine Methode oder Konstruktor mit gleichem Namen aber unterschiedlicher Parameterliste innerhalb der gleichen Klasse vorkommt
+- Wird auch statische Polymorphie genannt
+- Während der Kompilierung ist bereits anhand der Parameterliste bekannt welche Methode oder Konstruktor aufgerufen wird
+
+Überladener Methode
+
+```java
+public class Util {
+
+    public static int berechneRechteckFlaeche (int breite) {
+        return breite * breite;
+    }
+
+    public static int berechneRechteckFlaeche (int breite, int hoehe) {
+        return breite * hoehe;
+    }
+}
+```
+Überladener Konstruktor
+
+```java
+public class Person {
+
+    private String name;
+    private String vorname;
+    private String email;
+
+    public Person () {
+    }
+
+    public Person (String name, String vorname) {
+        this.name = name;
+        this.vorname = vorname;
+    }
+
+    public Person (String name, String vorname, String email) {
+        this.name = name;
+        this.vorname = vorname;
+        this.email = email;
+    }
+    // set- und get-Methoden
+}
+```
+
+###  22.2. <a name='berschreibenvonMethoden'></a>Überschreiben von Methoden
+
+Eine Methode kann überschrieben werden, wenn sie in einer is-a Beziehung zur Klasse steht (Vererbung). Das bedeutet, dass die Unterklasse die Möglichkeit hat eine geerbte Methode anzupassen undem sie die Methode anders implementiert.
+- Die Signatur darf dabei nicht geändert werden
+- Nur die Implementierung darf angepasst werden
+- Wenn dies nicht eingehalten wird handelt es sich um eine neue Methode der Unterklasse (Erweiterung)
+
+```java
+class Fahrzeug {
+    public void fahren() {
+        System.out.println("Fahrzeug faehrt");
+    }
+}
+
+class Auto extends Fahrzeug {
+    @Override
+    public void fahren() {
+        System.out.println("Auto faehrt");
+    }
+}
+```
+
+Die Klasse `java.lang.Object` ist die Oberklasse aller Java-Klassen und stellt unter anderem die Methode `toString` zur Verfügung
+
+```java
+public String toString() {
+    return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+```
+
+Diese Methode liefert den Inhalt des Objekts als String zurück, aber da die Standardimplementierung meistens nicht genügt, muss diese Methode jeweils überschrieben werden.
+
+```java
+public class Person {
+
+    private String name;
+    private String vorname;
+
+    public String toString() {
+        return name + " " + vorname;
+    }
+
+    // Weitere Implementierung
+}
+
+public class Student extends Person {
+
+    private int matrikelNummer;
+
+    public String toString() {
+        return getName(). + " " + getVorname() + ", Matrikel-Nr: " + matrikelNummer;
+    }
+
+    // Weitere Implementierung
+}
+```
+
+###  22.3. <a name='PolymorphievonObjekten'></a>Polymorphie von Objekten
+
+- Ein Objekt kann von unterschiedlichem Typ sein in der Vererbungshierarchie
+- Bsp: Eine Instanz der Klasse Student kann als Typ Student, Person oder Objekt auftreten und verwendet werden
+- Jede Oberklassen-Typ kann jedes Unterklassen-Typ Objekt referenzieren (Ein Referenz von Typ Person kann ein Objekt vom Typ Person sowie Student referenzieren)
+- Der echte Typ eines Objekts kann mit `instanceof` bestimmt werden
+
+```java
+public void show(Person obj) {
+    System.out.println(objgetNachname() + " " + obj.getVorname());
+
+    if (obj instanceof Student) {
+        Student s = (Student)obj;
+        System.out.println("Matr. Nr.: " + s.getMatrikelNummer());
+    }
+}
+```
+
+LSP / Liskovsches Substitutionsprinzip (Ersetzungsprinzip)
+
+- Die Instanz einer Klasse soll in jedem Fall durch die Instanz einer beliebigen Unterklasse ersetzt werden können
+- Ein Oberklassen-Typ kann immer durch einen Unterklassen-Typ ersetzt werden
+- Ist immer automatisch erfüllt wenn die Unterklasse die Oberklasse erweitert
+
+```java
+public class App {
+    public static void main(String[] args) {
+        Figur a = new Rechteck(30, 30, 60, 20);
+        Rechteck b = new Rechteck (80, 80, 30, 30);
+        Kreis c = new Kreis(100, 100, 25);
+
+        // Flaeche und Umfang ausgeben
+        Util.show(a);
+        Util.show(b);
+        Util.show(c);
+    }
+}
+
+public class Util {
+
+    public static void show(Figur obj) {
+        System.out.println("Flaeche: " + obj.berechneFlaeche());
+        System.out.println("Umfang: " + obj.berechneUmfang());
+    }
+}
+```
+
+###  22.4. <a name='PolymorphievonKlassenGenerics'></a>Polymorphie von Klassen (Generics)
+
+- Eine Container-Klasse wird benötigt mit welcher unterschiedliche Objekt Typen verwendet werden können
+- Die Klasse soll Methoden zum Hinzufügen, Suchen und Entfernen von Objekten zur verfügung stellen
+
+Unter einer generischen Klasse ist die Definition einer Klasse zu verstehen, in der die unbekannten Typen durch Platzhaltedr vertreten sind. Der Typ-Parameter wird mit enem Grossbuchstaben angegeben (oft T)
+
+```java
+public class CommonContainer<T> {
+    o
+    private T[] liste;
+
+    public boolean add(T object) {
+        // Implementierung
+    }
+
+    public T get(int index) {
+        // Implementierung
+    }
+
+    public boolean remove(T object) {
+        // Implementierung
+    }
+
+    // Implementierung
+}
+```
+
+Beispiel mit Person-Typ
+
+```java
+CommonContainer<Person> pContainer = new CommonContainer<>();
+pContainer.add(new Person("Weber", "Beat"));
+pContainer.add(new Person("Meier", "Roland"));
+
+Person p = pContainer.get(0);
+System.out.println(p.getName() + " " + p.getVorname());
+```
+
+Beispiel mit Rechteck-Typ
+
+```java
+CommonContainer<Rechteck> rContainer = new CommonContainer<>();
+rContainer.add(new Rechteck(50, 50, 20, 20));
+rContainer.add(new Rechteck(120, 80, 80, 10));
+
+Rechteck r = rContainer.get(1);
+System.out.println("Umfang: " + r.berechneUmfang());
+```
+
+
 
 
 
