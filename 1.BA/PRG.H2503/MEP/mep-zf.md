@@ -41,6 +41,16 @@
 	* 16.8. [Klassen- und Instanzvariablen (Objektvariablen)](#Klassen-undInstanzvariablenObjektvariablen)
 		* 16.8.1. [Instanzvariablen / Objektvariablen](#InstanzvariablenObjektvariablen)
 		* 16.8.2. [Referenz-Typ](#Referenz-Typ)
+* 17. [Vererbung](#Vererbung)
+	* 17.1. [Super- und Subklassen](#Super-undSubklassen)
+	* 17.2. [Generalisierung vs. Spezialisierung](#Generalisierungvs.Spezialisierung)
+	* 17.3. [Vererbung in Java](#VererbunginJava)
+	* 17.4. [java.lang.Object](#java.lang.Object)
+* 18. [Methoden Überschreiben](#Methodenberschreiben)
+* 19. [Konstruktoren in Unterklassen](#KonstruktoreninUnterklassen)
+* 20. [Typumwandelung (Type Cast) bei Referenzen](#TypumwandelungTypeCastbeiReferenzen)
+	* 20.1. [Statischer vs. dynamischer Typ](#Statischervs.dynamischerTyp)
+* 21. [Abstrakte Basisclassen](#AbstrakteBasisclassen)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -619,12 +629,12 @@ Klassenvariablen
     - Sie hat den Wert null und "zeigt" auf kein Objekt.
     - Der Versuch, über eine null-Referenz eine Methode aufzurufen wird mit einer Ausnahme (NullPointerException) quittiert.
 
-## Vererbung
+##  17. <a name='Vererbung'></a>Vererbung
 
 - Vererbung heisst das die Vorfahren ihre Eigenschaften und Fähigkeiten an ihr Nachkommen weitergeben
 - Falsch eingesetzte Vererbung kann zu grossen Problemen führen und muss nicht zwingend immer eingesetzt werden, da sie zu einer starken Koppelung führt → schlechtes Design
 
-### Super- und Subklassen
+###  17.1. <a name='Super-undSubklassen'></a>Super- und Subklassen
 
 - Superklasse (auch Oberklasse oder Basisklasse)
     - Gibt ihre Eigenschaften und Fähigkeiten (Attribute und Methoden) an eine weitere Klasse
@@ -633,7 +643,7 @@ Klassenvariablen
 
 Die Beziehung zwischen Super- und Subklasse wird eine "ist ein" oder "is-a" genannt. Die Unterklasse ist vom gleichen Type der Oberklasse und kann überall dort eingesetzt werden wo eine Oberklassen-Instanz verlangt wird.
 
-### Generalisierung vs. Spezialisierung
+###  17.2. <a name='Generalisierungvs.Spezialisierung'></a>Generalisierung vs. Spezialisierung
 
 Die Vererbung kann auch über mehrere Ebenen gehen, wobei eine Vererbungshierarchie entsteht.
 
@@ -642,7 +652,7 @@ Die Vererbung kann auch über mehrere Ebenen gehen, wobei eine Vererbungshierarc
 - Unterklassen stellen eine Spezialisierung der Oberklassen dar
     → Desto weiter unten in der Hierarchie desto mehr Unterschiede. Weniger shared Attribute & Methoden
 
-### Vererbung in Java
+###  17.3. <a name='VererbunginJava'></a>Vererbung in Java
 
 In Java wird die Vererbung mit Hilfe des Schlüsselwortes extends im Kopf der Unterklasse realisiert.
 
@@ -662,7 +672,7 @@ Hinweis zu Begriff "abgeleitet":
 - Wenn die Klasse B die Unterklasse der Klasse A ist, sagt man, dass die Klasse B von der Klasse A abgeleitet wird.
 - In unserem Beispiel würde dies heissen, dass die Klasse Student von der Klasse Person abgeleitet wird.
 
-### java.lang.Object
+###  17.4. <a name='java.lang.Object'></a>java.lang.Object
 
 Die Klasse java.lang.Objekt ist die implizite Basisklasse aller Klassen in Java
 
@@ -674,7 +684,7 @@ Die Klasse java.lang.Objekt ist die implizite Basisklasse aller Klassen in Java
 
 Methoden können Überschrieben werden wenn die Standartimplementierung nicht ausreicht.
 
-## Methoden Überschreiben
+##  18. <a name='Methodenberschreiben'></a>Methoden Überschreiben
 
 Eine Methode kann überschrieben werden indem sie in der Unterklasse nochmals definiert wird. Falls auf die ursprünglich vererbte Methode zugegriffen werden muss, kann dies mit "super" gemacht werden:
 
@@ -692,7 +702,7 @@ public final void sehrWichtigeMethode (){
 
 → Dies kann auch bei Klassen verwendet werden die nicht abgeleitet werden können sollten
 
-## Konstruktoren in Unterklassen
+##  19. <a name='KonstruktoreninUnterklassen'></a>Konstruktoren in Unterklassen
 
 - Konstruktoren werden nicht vererbt und müssen in der Unterklasse explizit implementiert werden. (Ausser default Konstruktor)
 - Diese Implementierung ist jedoch abhängig der in der Oberklasse vorhandenen Konstruktoren
@@ -763,13 +773,13 @@ Erstellung einer Student-Instanz
 Student s = new Student("Beat", "Weber", 8767);
 ```
 
-## Typumwandelung (Type Cast) bei Referenzen
+##  20. <a name='TypumwandelungTypeCastbeiReferenzen'></a>Typumwandelung (Type Cast) bei Referenzen
 
 Gleich wie bei elementaren Typen (8.) gibt es auch implizite (automatische) und explizite Typumwandelungen
 - Implizit: wenn ein Unterklassentyp in einen Oberklassentyp umgewandelt wird
 - Explizit: wenn ein Oberklassentyp in ein Unterklassentyp umgewandelt wird
 
-### Statischer vs. dynamischer Typ
+###  20.1. <a name='Statischervs.dynamischerTyp'></a>Statischer vs. dynamischer Typ
 
 - Ein statischer Referenztyp ist der Typ der bei Deklaration der Referenzvariable angegeben wird
 - Ein dynamischer Referenztyp ist identisch dem Typ des erzeugeten Objekts
@@ -795,7 +805,7 @@ Student s = new Person(); // Syntaxfehler! Wird nicht compiliert
 Student s = (Student) new Person(); // Syntaktisch korrekt, wirft aber ClassCastException!
 ```
 
-## Abstrakte Basisclassen
+##  21. <a name='AbstrakteBasisclassen'></a>Abstrakte Basisclassen
 
 Eine abstrakte Klasse ist eine Klasse, die nicht instanziiert werden kann, da sie eine Abstraktion darstellt
 
