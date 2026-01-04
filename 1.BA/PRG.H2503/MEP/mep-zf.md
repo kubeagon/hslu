@@ -56,6 +56,17 @@
 	* 22.2. [Überschreiben von Methoden](#berschreibenvonMethoden)
 	* 22.3. [Polymorphie von Objekten](#PolymorphievonObjekten)
 	* 22.4. [Polymorphie von Klassen (Generics)](#PolymorphievonKlassenGenerics)
+* 23. [Spezifikation vs Implementierung](#SpezifikationvsImplementierung)
+* 24. [Schnittstellen (Interfaces) in Java](#SchnittstellenInterfacesinJava)
+	* 24.1. [Interface zu Klassen beziehung](#InterfacezuKlassenbeziehung)
+	* 24.2. [Mehrere Klassen implementieren eine Schnittstelle](#MehrereKlassenimplementiereneineSchnittstelle)
+	* 24.3. [Eine Klasse implementiert mehrere Interfaces](#EineKlasseimplementiertmehrereInterfaces)
+	* 24.4. [Schnittstellen Vererbung](#SchnittstellenVererbung)
+	* 24.5. [Verwendung von Schnittstellen](#VerwendungvonSchnittstellen)
+* 25. [Vergleichen von Referenztypen](#VergleichenvonReferenztypen)
+	* 25.1. [Methode Object.equals](#MethodeObject.equals)
+	* 25.2. [Methode Object.hashCode](#MethodeObject.hashCode)
+	* 25.3. [Schnittstelle java.lang.Comparable](#Schnittstellejava.lang.Comparable)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -1051,14 +1062,14 @@ Rechteck r = rContainer.get(1);
 System.out.println("Umfang: " + r.berechneUmfang());
 ```
 
-## Spezifikation vs Implementierung
+##  23. <a name='SpezifikationvsImplementierung'></a>Spezifikation vs Implementierung
 
 Die Spezifikation beschreibt das Verhalten des Systems aus sicht von Benutzer. Dafür werden in Java Schnittstellen (Interfaces) verwendet.
 
 - Speziefikation: Beschreibt was zu tun ist ohne auf das wie einzugehen
 - Implementierung: Erfolgt mit Klassen und definiert wie das gewünschte Verhalten realisiert wird
 
-## Schnittstellen (Interfaces) in Java
+##  24. <a name='SchnittstellenInterfacesinJava'></a>Schnittstellen (Interfaces) in Java
 
 Eine Klasse kann mehrere Schnittstellen realisieren. Bei der Implementierung einer Schnittstelle eignet sich die Klasse automatisch auch den Typ der Schnittstelle an. Die Implementierung einer Schnittstelle erfolgt mit Hilfe des Schlüsselwortes `implements``
 
@@ -1074,7 +1085,7 @@ Die Beziehung zwischen der Schnittstelle und realisierenden Klasse ist eine *imp
 - Die Klasse "Auto" implementiert alle Methoden der Klasse "Beweglich" → Dadurch ist jede Instanz der Klasse automatisch auch vom Typ "Beweglich"
 - Eine Instanz der Klasse "Auto" ist vom Typ Objekt, Auto und Beweglich
 
-### Interface zu Klassen beziehung
+###  24.1. <a name='InterfacezuKlassenbeziehung'></a>Interface zu Klassen beziehung
 
 ```mermaid
 classDiagram
@@ -1099,7 +1110,7 @@ classDiagram
 
 ```
 
-### Mehrere Klassen implementieren eine Schnittstelle
+###  24.2. <a name='MehrereKlassenimplementiereneineSchnittstelle'></a>Mehrere Klassen implementieren eine Schnittstelle
 
 Eine Schnittstelle kann auch von mehreren Klassen implementiert werden, weil die Schnittstelle eine Abstraktion der Implementierung ist
 (gibt das Verhalten vor das implementiert werden soll).
@@ -1130,7 +1141,7 @@ classDiagram
 
 ```
 
-### Eine Klasse implementiert mehrere Interfaces
+###  24.3. <a name='EineKlasseimplementiertmehrereInterfaces'></a>Eine Klasse implementiert mehrere Interfaces
 
 Eine klasse kann nur von einer Klasse abgeleitet werden, jedoch kann sie mehrere Interfaces realisieren. Mit jeder realisierenden Schnittstelle erhalten
 die Instanzen der Klasse einen weiteren Typ.
@@ -1172,7 +1183,7 @@ public class Schiff implements Beweglich, Fernsteuerbar {
 }
 ```
 
-### Schnittstellen Vererbung
+###  24.4. <a name='SchnittstellenVererbung'></a>Schnittstellen Vererbung
 
 Eine Schnittstelle kann auch von einer anderen Schnittstelle abgeleitet werden (geerbt werden)
 
@@ -1203,7 +1214,7 @@ public interface InterfaceB extends InterfaceA {
 
 Daraus folgt: Alle Klassen die InterfaceB implementiereun müssen zwingend audch die Methoden implementieren die im InterfaceA vorgegeben sind.
 
-### Verwendung von Schnittstellen
+###  24.5. <a name='VerwendungvonSchnittstellen'></a>Verwendung von Schnittstellen
 
 Eine Referenz vom Typ einer Schnittstelle kann auf die Instaz einer beliebigen Klasse zeigen, welche die Schnittstelle implementiert (realisiert).
 
@@ -1232,7 +1243,7 @@ for (Beweglich beweglichesObjekt : arr) {
 Ob das konkrete beweglichesObjekt vom Typ Auto, Schiff oder Hubschrauber ist, ist irrelevant. der Typ "Beweglich" stellt sicher die Methode start
 die objekte bedenkenlos aufrufen kann.
 
-## Vergleichen von Referenztypen
+##  25. <a name='VergleichenvonReferenztypen'></a>Vergleichen von Referenztypen
 
 Sobald Objekte sortiert oder gefiltert werden müssen, braucht man eine Möglichkeit, diese Untereinander zu vergleichen. Objekte werden normalerweise nach Inhalt
 von Instanzvariablen verglichen. Welche Intanzvariablen berücksichtigt werden muss situativ entschieden werden.
@@ -1240,7 +1251,7 @@ von Instanzvariablen verglichen. Welche Intanzvariablen berücksichtigt werden m
 Beim Vergleich von zwei Objekten muss herausgefunden werden ob die Objekte gleich sind, und falls nicht welches "grösser" ist. Die Überprüfung wird mit der
 Methode *equals* durchgeführt. Diese Methode existiert bereits als Instanzmethode von der Klasse java.lang.Object (Mutter aller Mütter).
 
-### Methode Object.equals
+###  25.1. <a name='MethodeObject.equals'></a>Methode Object.equals
 
 Die Standard-Implementation der Instanzmethode equals in der Klasse Object vergleicht nur, ob die Objektreferenzen gleich sind.
 
@@ -1289,7 +1300,7 @@ public boolean equals (Object obj) {
 }
 ```
 
-### Methode Object.hashCode
+###  25.2. <a name='MethodeObject.hashCode'></a>Methode Object.hashCode
 
 Wenn die Methode *equals* überschrieben wird, muss die Methode hashCode (eine weitere Methode der Klasse Object) auch überschrieben werden.
 Es mussen die gleichen Attribute wie in der Methode Attribute berücksichtigt werden.
@@ -1304,7 +1315,7 @@ public int hashCode() {
 }
 ```
 
-### Schnittstelle java.lang.Comparable
+###  25.3. <a name='Schnittstellejava.lang.Comparable'></a>Schnittstelle java.lang.Comparable
 
 Die Schnittstelle Comparable deklariert die Methode *compareTo* und ermöglicht jeder Klasse, explizit anzugeben, wie ihre Instanzen untereinander
 verglichen werden sollen. Jede Klasse definiert dafür eine *natürliche Sortierordnung*.
@@ -1350,9 +1361,166 @@ System.out.println(a.compareTo(b));  // -1  (Alice ist jünger)
 System.out.println(b.compareTo(a));  //  1  (Bob is älter)
 ```
 
+## Container
 
+- List: Geordnete Sammelung von Objekten (Duplikate möglich)
+- Set: Ungeordnete Sammelung von Objekten (ohne Duplikate)
+- Mappe: Sammelung an Schlüssel-Wert Paare (key-values)
+- Tree: Hierarchisch geordnete Baumstruktur
+- Queue: Warteschlange mit FirstInFirstOut (FIFO) Prinzip
+-  Stack: Stapel mit LastInFirstOut (LIFO) Prinzip
 
+Alle aufgelisteten Datenstrukturen sind dynamisch. Dies bedeutet das der Speicherbedarf nicht nicht bekannt sein muss und automatisch vergrössert oder verkleinert wird.
 
+## Java Collection Framework
 
+Das Collection Framwork ist ein gutes Beispiel für schnittstellenbasierten Design
+
+![alt text](auszug-collection.png)
+
+### ArrayList
+
+![alt text](arraylist.png)
+
+- Verwaltung von Elementen mit Array
+- Anpassung der Array grösse automatisch
+- Einfügen ans Ende der Liste ist performanter als LinkedList
+
+```java
+// ArrayList erstellen
+List<Lampe> liste = new ArrayList<>();
+
+// Drei Lampe-Instanzen der Liste hinzufügen
+liste.add(new Lampe(230, 60, "E-27"));
+liste.add(new Lampe(230, 40, "E-27"));
+liste.add(new Lampe(230, 90, "E-27"));
+
+// Anzahl Elemente ausgeben
+System.out.println("Anzahl Elemente: " + liste.size());
+
+// Zweites Element entfernen
+liste.remove(1);
+
+// Anzahl Elemente ausgeben
+System.out.println("Anzahl Elemente: " + liste.size());
+
+// Alle Elemente in der Liste "ausgeben"
+for (Iterator<Lampe> it = liste.iterator(); it.hasNext(); ){
+System.out.println(it.next().toString());
+}
+```
+
+### LinkedList
+
+![alt text](linkedlist.png)
+
+- Ermöglicht navigation in beide Richtungen (next- und previous-Referenz)
+- Insert und Remove performanter als bei ArrayList
+
+```java
+// LinkedList erstellen
+List<Lampe> liste = new LinkedList<>();
+
+// Drei Lampe-Instanzen der Liste hinzufügen
+liste.add(new Lampe(230, 60, "E-27"));
+liste.add(new Lampe(230, 40, "E-27"));
+liste.add(new Lampe(230, 90, "E-27"));
+
+// Anzahl Elemente ausgeben
+System.out.println("Anzahl Elemente: " + liste.size());
+
+// Zweites Element entfernen
+liste.remove(1);
+
+// Anzahl Elemente ausgeben
+System.out.println("Anzahl Elemente: " + liste.size());
+
+// Alle Elemente in der Liste "ausgeben"
+for (Iterator<Lampe> it = liste.iterator(); it.hasNext(); ){
+System.out.println(it.next().toString());
+}
+```
+
+### HashSet
+
+- Realisiert die Schnittstelle Set und stellt sicher das ein Objekt nur einmal vorkommt
+- Verwedet die Methode `equals`, die typspeziefisch implementiert sein soll
+
+```java
+// HashSet erstellen
+Set<Lampe> set = new HashSet<>();
+
+// Drei Lampe-Instanzen der Liste hinzufügen
+set.add(new Lampe(230, 60, "E-27"));
+set.add(new Lampe(230, 40, "E-27"));
+set.add(new Lampe(230, 90, "E-27"));
+
+// Anzahl Elemente ausgeben
+System.out.println("Anzahl Elemente: " + set.size());
+
+// Eine weitere Lampe einfügen
+set.add(new Lampe(230, 40, "E-27"));
+
+// Anzahl Elemente ausgeben
+System.out.println("Anzahl Elemente: " + set.size());
+
+// Ausgabe
+for (Iterator<Lampe> it = set.iterator(); it.hasNext(); ) {
+System.out.println(it.next().toString());
+}
+```
+
+### TreeSet
+
+- Realisiert die Schnittstelle SortedSet
+- Objekte werden sortiert, deswegen müssen sie vom Typ Comparable sein
+
+```java
+Set<String> tSet = new TreeSet<>();
+
+tSet.add("Winter");
+tSet.add("Frühling");
+tSet.add("Sommer");
+tSet.add("Herbst");
+
+// Anzahl Elemente ausgeben
+System.out.println("Anzahl: " + tSet.size());
+
+// Ausgabe
+for (String s : tSet) {
+System.out.println(s);
+}
+```
+
+### HashMap
+
+- Realisiert Schnittstelle Map und kann Key-Values verwalten
+- Keys müssen eindeutig sein
+- Null kann eingesetzt werden auch für den Key (1-mal)
+
+```java
+// Mappe erstellen
+Map<String, Person> userMap = new HashMap<>();
+
+// Personen hinzufügen, als Schlüssel soll der Benutzername dienen
+userMap.put("jsucur", new Person("Jordan", "Sucur"));
+userMap.put("mpfister", new Person("Markus", "Pfister"));
+userMap.put("cwalker", new Person("Carmen", "Walker"));
+
+// Anzahl Personen in der Mappe ausgeben
+System.out.println("Anzahl Personen: " + userMap.size());
+
+// Eine weitere Person einfügen
+userMap.put("mpfister", new Person("Marco", "Pfister"));
+
+// Anzahl Personen in der Mappe ausgeben
+System.out.println("Anzahl Personen: " + userMap.size());
+
+// Person mit Benutzername mpfister holen
+Person p = userMap.get("mpfister");
+
+// Name und Vorname der geholten Person ausgeben
+System.out.println(p.getVorname() + " " + p.getName());
+```
 
 
