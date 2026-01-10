@@ -1523,4 +1523,141 @@ Person p = userMap.get("mpfister");
 System.out.println(p.getVorname() + " " + p.getName());
 ```
 
+## Abfangen und Behandeln von Aussnahmen
 
+Basisklasse für Errors und Exceptions: `java.lang.Throwable`
+
+```java
+// Kontruktoren
+Throwable(String message)
+Throwable(String message, Throwable cause)
+
+//Methoden
+Throwable getCause()
+String getMessage()
+void printStackTrace()
+void printStackTrace(PrintWriter s)
+```
+
+Basisklasse für alle geprüfte und nicht geprüfte Ausnahmen: `java.lang.Exception``
+
+```java
+// Konstruktoren
+Exception()
+Exception(String message)
+Exception(String message, Throwable cause)
+```
+
+Wenn eine Aussnahme nicht behandelt wird, landet sie bei der JVM was zu einem Programmabsturz führt.
+
+Versuchen (try): Aktionen ausführen, die unter Umständen eine oder mehrere Ausnahmen werfen könnten.
+
+```java
+try {
+    // Code die eine oder mehrere Ausnahmen werfen könnte
+}
+```
+
+Abfangen (catch): Falls Probleme auftauchen sollten, diese hier lösen und dann zurück zur Programmausführung zurückzukehren versuchen.
+
+```java
+catch(ExceptionType) {
+    // Massnahmen (Behandelung der Ausnahme, Exception-Handler)
+}
+```
+
+Auf jeden Fall machen (finally): Programmcode abarbeiten, der in jedem Fall ausgeführt werden muss.
+
+```java
+} finally {
+    // Code der immer ausgeführt werden muss.
+}
+```
+
+Beispiel mit Datum String per Typ java.time.LocalDate parsen:
+
+- Wenn das parsen nicht möglich ist wird von der Methode parse die Ausnahme vom Typ DateTimeParseException geworfen
+- Die Ausnahme wird vor Ort behandelt
+
+```java
+private static LocalDate readLocalDate() {
+    LocalDate date = null;
+    String pattern = "dd.MM.yyyy";
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Datum eingeben [dd.MM.yyyy]: ");
+    String strDate = sc.nextLine();
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+
+    do {
+        try {
+            date = localDate.parse(strDate, formatter);
+        } catch (DateTimeParseException e) {
+            System.out.print("Datum eingeben [dd.MM.yyyy]: ");
+            strDate = sc.nextLine();
+        }
+    } while (date == null);
+
+    return date;
+}
+```
+
+- Die Ausnahme wird an die Aufrufer-Methode weitergeleitet
+- Die Methode `toLocalDate` erhaltet sowhol den Datum-String sowie das Datum-Format von der Aufrufer-Methode zugestellt
+- Mit `throws` wird bekannt gegeben, das die Methode `toLocalDate` eine Aussnahme vom Typ `Exception` werfen könnte
+
+```java
+private static LocalDate toLocalDate(String date, String pattern) throws Exception {
+    try {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+        return LocalDate.parse(date, formatter);
+    } catch (DateTimeParseException e) {
+        throw new Exception("Fehler: [value: " + date + ", pattern: " + pattern + "]", e);
+    }
+}
+```
+
+Mehrere Catch-Blöcke
+
+```java
+private void read(String fileName) {
+    try {
+        // Implementierung
+    } catch (FileNotFoundException e) {
+        // Behandelung Ausnahme
+    } catch (IOException e ) {
+        // Behandelung Ausnahme
+    } catch ...
+}
+```
+
+## Definition und Verwendung eigener Ausnahme-Klassen
+
+Beispiel Definition:
+
+```java
+public class NotSupportedVersionException extends Exception {
+    public NotSupportedVersionException() {
+
+    }
+
+    public NotSupportedVersionException(String message) {
+        super(message);
+    }
+}
+```
+
+Beispiel Verwendung:
+
+```java
+public void sendData(byte[] buffer, String protocol, String version) throws NotSupportedVersionException {
+    if (!isSupported(protocol, version)) {
+        String msg = "Die Version " + version + " wird nicht unterstützt!";
+        NotSupportedVersionException e = new NotSupportedVersionException(msg);
+        throw e;
+    } else {
+// TODO - Daten senden ...
+    }
+}
+```
