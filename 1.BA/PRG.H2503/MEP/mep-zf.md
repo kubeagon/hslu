@@ -67,6 +67,15 @@
 	* 25.1. [Methode Object.equals](#MethodeObject.equals)
 	* 25.2. [Methode Object.hashCode](#MethodeObject.hashCode)
 	* 25.3. [Schnittstelle java.lang.Comparable](#Schnittstellejava.lang.Comparable)
+* 26. [Container](#Container)
+* 27. [Java Collection Framework](#JavaCollectionFramework)
+	* 27.1. [ArrayList](#ArrayList)
+	* 27.2. [LinkedList](#LinkedList)
+	* 27.3. [HashSet](#HashSet)
+	* 27.4. [TreeSet](#TreeSet)
+	* 27.5. [HashMap](#HashMap)
+* 28. [Abfangen und Behandeln von Aussnahmen](#AbfangenundBehandelnvonAussnahmen)
+* 29. [Definition und Verwendung eigener Ausnahme-Klassen](#DefinitionundVerwendungeigenerAusnahme-Klassen)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -1361,7 +1370,7 @@ System.out.println(a.compareTo(b));  // -1  (Alice ist jünger)
 System.out.println(b.compareTo(a));  //  1  (Bob is älter)
 ```
 
-## Container
+##  26. <a name='Container'></a>Container
 
 - List: Geordnete Sammelung von Objekten (Duplikate möglich)
 - Set: Ungeordnete Sammelung von Objekten (ohne Duplikate)
@@ -1372,13 +1381,13 @@ System.out.println(b.compareTo(a));  //  1  (Bob is älter)
 
 Alle aufgelisteten Datenstrukturen sind dynamisch. Dies bedeutet das der Speicherbedarf nicht nicht bekannt sein muss und automatisch vergrössert oder verkleinert wird.
 
-## Java Collection Framework
+##  27. <a name='JavaCollectionFramework'></a>Java Collection Framework
 
 Das Collection Framwork ist ein gutes Beispiel für schnittstellenbasierten Design
 
 ![alt text](auszug-collection.png)
 
-### ArrayList
+###  27.1. <a name='ArrayList'></a>ArrayList
 
 ![alt text](arraylist.png)
 
@@ -1410,7 +1419,7 @@ System.out.println(it.next().toString());
 }
 ```
 
-### LinkedList
+###  27.2. <a name='LinkedList'></a>LinkedList
 
 ![alt text](linkedlist.png)
 
@@ -1441,7 +1450,7 @@ System.out.println(it.next().toString());
 }
 ```
 
-### HashSet
+###  27.3. <a name='HashSet'></a>HashSet
 
 - Realisiert die Schnittstelle Set und stellt sicher das ein Objekt nur einmal vorkommt
 - Verwedet die Methode `equals`, die typspeziefisch implementiert sein soll
@@ -1470,7 +1479,7 @@ System.out.println(it.next().toString());
 }
 ```
 
-### TreeSet
+###  27.4. <a name='TreeSet'></a>TreeSet
 
 - Realisiert die Schnittstelle SortedSet
 - Objekte werden sortiert, deswegen müssen sie vom Typ Comparable sein
@@ -1492,7 +1501,7 @@ System.out.println(s);
 }
 ```
 
-### HashMap
+###  27.5. <a name='HashMap'></a>HashMap
 
 - Realisiert Schnittstelle Map und kann Key-Values verwalten
 - Keys müssen eindeutig sein
@@ -1523,7 +1532,7 @@ Person p = userMap.get("mpfister");
 System.out.println(p.getVorname() + " " + p.getName());
 ```
 
-## Abfangen und Behandeln von Aussnahmen
+##  28. <a name='AbfangenundBehandelnvonAussnahmen'></a>Abfangen und Behandeln von Aussnahmen
 
 Basisklasse für Errors und Exceptions: `java.lang.Throwable`
 
@@ -1632,7 +1641,7 @@ private void read(String fileName) {
 }
 ```
 
-## Definition und Verwendung eigener Ausnahme-Klassen
+##  29. <a name='DefinitionundVerwendungeigenerAusnahme-Klassen'></a>Definition und Verwendung eigener Ausnahme-Klassen
 
 Beispiel Definition:
 
