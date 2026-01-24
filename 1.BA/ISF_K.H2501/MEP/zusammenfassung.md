@@ -1,103 +1,28 @@
-<!-- vscode-markdown-toc -->
-* 1. [SW01 Begriffe und Common Ground](#SW01BegriffeundCommonGround)
-	* 1.1. [Verstehen den Sinn von Information-Security-Management (ISM)](#VerstehendenSinnvonInformation-Security-ManagementISM)
-		* 1.1.1. [ISM (Information Security Mangament)](#ISMInformationSecurityMangament)
-	* 1.2. [Kennen die Unterschiede und Gemeinsamkeiten von Sicherheit im Sinne von "Safety" und "Security"](#KennendieUnterschiedeundGemeinsamkeitenvonSicherheitimSinnevonSafetyundSecurity)
-		* 1.2.1. [Safety vs. Security](#Safetyvs.Security)
-		* 1.2.2. [Können Begriffe IT- , Daten-, Cyber-, Informations-, integrale Sicherheit gegeneinander abgrenzen und anwenden](#KnnenBegriffeIT-Daten-Cyber-Informations-integraleSicherheitgegeneinanderabgrenzenundanwenden)
-* 2. [SW02 (Self-) Awareness](#SW02Self-Awareness)
-	* 2.1. [Können Malware-Kategorien unterscheiden](#KnnenMalware-Kategorienunterscheiden)
-		* 2.1.1. [Malware](#Malware)
-	* 2.2. [Kennen die 5-Schritte der Informationssicherheit und können Beispiele für jeden Schritt geben und erklären](#Kennendie5-SchrittederInformationssicherheitundknnenBeispielefrjedenSchrittgebenunderklren)
-		* 2.2.1. [5 Schritte der Informationssicherheit](#SchrittederInformationssicherheit)
-	* 2.3. [Kennen die 3 Säulen der Informationssicherheit](#Kennendie3SulenderInformationssicherheit)
-		* 2.3.1. [3 Säulen der Infomrationssicherheit](#SulenderInfomrationssicherheit)
-* 3. [SW03 Intercepten](#SW03Intercepten)
-	* 3.1. [Sie können erklären wie ein Proxy bzw. Reverse-Proxy funktioniert und welche Netzwerkverbindungen dabei gemacht werden](#SieknnenerklrenwieeinProxybzw.Reverse-ProxyfunktioniertundwelcheNetzwerkverbindungendabeigemachtwerden)
-		* 3.1.1. [(Forward-) Proxy und Reverse-Proxy](#Forward-ProxyundReverse-Proxy)
-* 4. [SW04 Anwendungssicherheit: Session Handling](#SW04Anwendungssicherheit:SessionHandling)
-	* 4.1. [Sie kennen OWASP Top 10 (2021)](#SiekennenOWASPTop102021)
-		* 4.1.1. [OWASP Top 10 (2021)](#OWASPTop102021)
-	* 4.2. [Sie können Angriffe auf verschiedenen Stufen des Internet-Protokoll-Stacks beschreiben](#SieknnenAngriffeaufverschiedenenStufendesInternet-Protokoll-Stacksbeschreiben)
-		* 4.2.1. [Angriffe](#Angriffe)
-	* 4.3. [Sie können Beispiele von Spoofing, Overflow und DoS-Angriffe angeben](#SieknnenBeispielevonSpoofingOverflowundDoS-Angriffeangeben)
-		* 4.3.1. [Spoofing](#Spoofing)
-		* 4.3.2. [Overflow](#Overflow)
-	* 4.4. [Sie können in wenigen Sätzen beschreiben wie ARP-Spoofing, SYN-Flooding, Distributed Reflection Denial of Service und Heartbleed ablaufen](#SieknneninwenigenStzenbeschreibenwieARP-SpoofingSYN-FloodingDistributedReflectionDenialofServiceundHeartbleedablaufen)
-		* 4.4.1. [Distributed Reflection Denial of Service (DRDoS)](#DistributedReflectionDenialofServiceDRDoS)
-		* 4.4.2. [Heartbleed](#Heartbleed)
-	* 4.5. [Sie können einfache Integer-Overflow-Angriffe selbst ausführen](#SieknneneinfacheInteger-Overflow-Angriffeselbstausfhren)
-	* 4.6. [Sie kennen die sicherheitsrelevanten Server-Headers und können diese korrekt setzen](#SiekennendiesicherheitsrelevantenServer-Headersundknnendiesekorrektsetzen)
-		* 4.6.1. [Strict-Transport-Security](#Strict-Transport-Security)
-		* 4.6.2. [X-Content-Type-Options](#X-Content-Type-Options)
-		* 4.6.3. [X-Frame-Options](#X-Frame-Options)
-		* 4.6.4. [Content-Security-Policy (CSP)](#Content-Security-PolicyCSP)
-		* 4.6.5. [Referrer-Policy](#Referrer-Policy)
-		* 4.6.6. [Permissions-Policy](#Permissions-Policy)
-		* 4.6.7. [Cookie-Attribute (kein header)](#Cookie-Attributekeinheader)
-	* 4.7. [Sie können in wenigen Sätzen beschreiben, was eine Session ist und wissen, welche Eigenschaften eine sichere Session ausmacht](#SieknneninwenigenStzenbeschreibenwaseineSessionistundwissenwelcheEigenschafteneinesichereSessionausmacht)
-		* 4.7.1. [Was ist eine Session?](#WasisteineSession)
-		* 4.7.2. [Eigenschaften einer sicheren Session](#EigenschafteneinersicherenSession)
-	* 4.8. [Sie kennen de Same-Origin-Policy und wissen, wie sie bei Cookies wirkt](#SiekennendeSame-Origin-PolicyundwissenwiesiebeiCookieswirkt)
-	* 4.9. [Sie können in wenigen Sätzen einen Angriff mit Session-Fixation beschreiben](#SieknneninwenigenStzeneinenAngriffmitSession-Fixationbeschreiben)
-		* 4.9.1. [Ablauf eines Session-Fixation Angriffs](#AblaufeinesSession-FixationAngriffs)
-	* 4.10. [Sie können ein sicheres Session-Management mit Cookies implementieren](#SieknneneinsicheresSession-ManagementmitCookiesimplementieren)
-* 5. [SW05 Symmetrische Kryptologie](#SW05SymmetrischeKryptologie)
-	* 5.1. [Sie verstehen was symmetrische Kryptographie ist, welche Arten von Sicherheit und Angriffsarten es gibt](#SieverstehenwassymmetrischeKryptographieistwelcheArtenvonSicherheitundAngriffsartenesgibt)
-		* 5.1.1. [Arten an Sicherheit bei symmetrische Kryptographie](#ArtenanSicherheitbeisymmetrischeKryptographie)
-		* 5.1.2. [Angriffsarten auf symmetrische Kryprographie](#AngriffsartenaufsymmetrischeKryprographie)
-	* 5.2. [Sie verstehen was eine Hashfunktion ist und welche Eigenschaften eine kryptographische Hashfunktion ausmachen, bzw. was es heisst wenn eine Hashfunktion gebrochen ist](#SieverstehenwaseineHashfunktionistundwelcheEigenschafteneinekryptographischeHashfunktionausmachenbzw.wasesheisstwenneineHashfunktiongebrochenist)
-		* 5.2.1. [Eigenschaften einer kryptographischen Hashfunktion](#EigenschafteneinerkryptographischenHashfunktion)
-		* 5.2.2. [Gebrochene Hashfunktion](#GebrocheneHashfunktion)
-	* 5.3. [Sie kennen verschiedene Anwendungen von Hashfunktionen und können mit Hilfe von Hashfunktionen die Integrität von nachrichten sicherstellen](#SiekennenverschiedeneAnwendungenvonHashfunktionenundknnenmitHilfevonHashfunktionendieIntegrittvonnachrichtensicherstellen)
-		* 5.3.1. [Anwendung von Hashfunktionen](#AnwendungvonHashfunktionen)
-		* 5.3.2. [Integrität mit Hashfunktionen sicherstellen](#IntegrittmitHashfunktionensicherstellen)
-	* 5.4. [Sie wissen, welche Algorithmen sicher sind](#SiewissenwelcheAlgorithmensichersind)
-* 6. [SW06 Asymmetrische Kryptologie](#SW06AsymmetrischeKryptologie)
-	* 6.1. [Sie verstehen was Public-Key-Kryptographie ist](#SieverstehenwasPublic-Key-Kryptographieist)
-	* 6.2. [Sie kennen die gängigen asymmetrischen und hybriden Verschlüsselungs- und Signaturalgorithmen, wissen worauf deren Sicherheit basiert und wie sie in der Praxis angewendet werden](#SiekennendiegngigenasymmetrischenundhybridenVerschlsselungs-undSignaturalgorithmenwissenworaufderenSicherheitbasiertundwiesieinderPraxisangewendetwerden)
-	* 6.3. [Sie wissen was kryptographisch sichere Zufallszahlen sind und wo diese verwendet werden. Sie können schwach gewählte Zufallszahlen für Angriffe ausnützen](#SiewissenwaskryptographischsichereZufallszahlensindundwodieseverwendetwerden.SieknnenschwachgewhlteZufallszahlenfrAngriffeausntzen)
-		* 6.3.1. [Wie kann ein Angreifer das ausnutzen?](#WiekanneinAngreiferdasausnutzen)
-	* 6.4. [Sie wissen was eine Public-Key-Infrastruktur, eine Certificate Authority und ein Zertifikat ist, wofür diese verwendet werden und wie Zertifikate ausgestellt werden](#SiewissenwaseinePublic-Key-InfrastruktureineCertificateAuthorityundeinZertifikatistwofrdieseverwendetwerdenundwieZertifikateausgestelltwerden)
-		* 6.4.1. [Austellung von Zertifikaten](#AustellungvonZertifikaten)
-	* 6.5. [Sie wissen was SSL/TLS ist, welche Funktionalität es erreicht und wie das Protokoll konzeptionell abläuft](#SiewissenwasSSLTLSistwelcheFunktionalitteserreichtundwiedasProtokollkonzeptionellabluft)
-		* 6.5.1. [Ablauf SSL/TLS](#AblaufSSLTLS)
-* 7. [SW07 Anforderungen kryptographische Protokolle](#SW07AnforderungenkryptographischeProtokolle)
-* 8. [SW09 Risiko-Management](#SW09Risiko-Management)
-	* 8.1. [Können die Begriffe Bedrohung, Schwachstelle, Exposition, Asset im Cyberraum an Beispielen erklären](#KnnendieBegriffeBedrohungSchwachstelleExpositionAssetimCyberraumanBeispielenerklren)
-	* 8.2. [Können Risiken systematisch identifizieren](#KnnenRisikensystematischidentifizieren)
-	* 8.3. [Kennen das Vorgehen im qualitativen Risiko-Assessment und können es beispielhaft anwenden](#KennendasVorgehenimqualitativenRisiko-Assessmentundknnenesbeispielhaftanwenden)
-	* 8.4. [Kennen Strategien zur minimierung von Risiken](#KennenStrategienzurminimierungvonRisiken)
-* 9. [SW11 Vulnerabilities](#SW11Vulnerabilities)
-	* 9.1. [Wissen, was "Vulnerabilities" sind](#WissenwasVulnerabilitiessind)
-	* 9.2. [Die Bedeutung des Disclosure-Prozesses einer Vulnerability verstehen](#DieBedeutungdesDisclosure-ProzesseseinerVulnerabilityverstehen)
-	* 9.3. [Methoden zur Priorisierung von Vulnerabilities kennen](#MethodenzurPriorisierungvonVulnerabilitieskennen)
-* 10. [SW12 Anwendungssicherheit: Injection](#SW12Anwendungssicherheit:Injection)
-	* 10.1. [Sie können einfache Cross-Site Request Forgery-Angriffe ausführen und können effektive Massnahmen dagegen wählen](#SieknneneinfacheCross-SiteRequestForgery-AngriffeausfhrenundknneneffektiveMassnahmendagegenwhlen)
-	* 10.2. [Sie können in wenigen Sätzen erklären, was das Konzept eines Injection-Angriffs ist](#SieknneninwenigenStzenerklrenwasdasKonzepteinesInjection-Angriffsist)
-	* 10.3. [Sie können den Ablauf von Path Traversal, SQL Injection und Cross-Site-Scripting-Angriffen in wenigen Sätzen beschreiben](#SieknnendenAblaufvonPathTraversalSQLInjectionundCross-Site-Scripting-AngriffeninwenigenStzenbeschreiben)
-	* 10.4. [Sie können sinnvolle und effektive Massnahmen gegen Injection-Angriffe im allgemeinen, und Path Traversal, SQL Injection und Cross-Site-Scriptuing-Angriffe definieren](#SieknnensinnvolleundeffektiveMassnahmengegenInjection-AngriffeimallgemeinenundPathTraversalSQLInjectionundCross-Site-Scriptuing-Angriffedefinieren)
-* 11. [SW14 Quantencomputing und -kryptographie](#SW14Quantencomputingund-kryptographie)
-	* 11.1. [Sie wissen was ein Quantencomputer ist und was ihn von einem klassischen Computer unterscheidet](#SiewissenwaseinQuantencomputeristundwasihnvoneinemklassischenComputerunterscheidet)
-	* 11.2. [Sie können Beispiele von Problemen angeben, welche von einem Quantencomputer besonders schnell gelöst werden können](#SieknnenBeispielevonProblemenangebenwelchevoneinemQuantencomputerbesondersschnellgelstwerdenknnen)
-	* 11.3. [Sie verstehen welchen Einfluss die Existenz eines Quantencomputers auf die Kryptographie hat](#SieverstehenwelchenEinflussdieExistenzeinesQuantencomputersaufdieKryptographiehat)
-	* 11.4. [Sie können erklären wie Quantenschlüsselaustausch und Quantenzufallszahlengeneratoren funktionieren und wissen, welche Sicherheitseigenschaften dadurch erreicht werden](#SieknnenerklrenwieQuantenschlsselaustauschundQuantenzufallszahlengeneratorenfunktionierenundwissenwelcheSicherheitseigenschaftendadurcherreichtwerden)
+## Inhaltsverzeichnis
 
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+1. [SW01 Begriffe und Common Ground](#1-sw01-begriffe-und-common-ground)
+2. [SW02 (Self-) Awareness](#2-sw02-self--awareness)
+3. [SW03 Intercepten](#3-sw03-intercepten)
+4. [SW04 Anwendungssicherheit: Session Handling](#4-sw04-anwendungssicherheit-session-handling)
+5. [SW05 Symmetrische Kryptologie](#5-sw05-symmetrische-kryptologie)
+6. [SW06 Asymmetrische Kryptologie](#6-sw06-asymmetrische-kryptologie)
+7. [SW07 Anforderungen kryptographische Protokolle](#7-sw07-anforderungen-kryptographische-protokolle)
+8. [SW09 Risiko-Management](#8-sw09-risiko-management)
+9. [SW11 Vulnerabilities](#9-sw11-vulnerabilities)
+10. [SW12 Anwendungssicherheit: Injection](#10-sw12-anwendungssicherheit-injection)
+11. [SW14 Quantencomputing und -kryptographie](#11-sw14-quantencomputing-und--kryptographie)
+
+---
 
 # Zusammenfassung ISF
 
 In dieser Zusammenfassung werden explizit die Lernziele angeschaut und deren Kerninhalte revidiert.
 
-##  1. <a name='SW01BegriffeundCommonGround'></a>SW01 Begriffe und Common Ground
+##  1. SW01 Begriffe und Common Ground
 
-###  1.1. <a name='VerstehendenSinnvonInformation-Security-ManagementISM'></a>Verstehen den Sinn von Information-Security-Management (ISM)
+###  1.1. Verstehen den Sinn von Information-Security-Management (ISM)
 
-####  1.1.1. <a name='ISMInformationSecurityMangament'></a>ISM (Information Security Mangament)
+####  1.1.1. ISM (Information Security Mangament)
 
 ISM ist das Systematische Managment von Infromationssicherheit, es sorgt dafür dass Informationssicherheit geplant, messbar und wirtschaftlich umgestzt wird.
 
@@ -109,14 +34,14 @@ Die Ziele von ISM sind:
 - Privacy: Schutz persönlicher Daten
 - Anonymität: Identität soll nicht rekonstruirbar sein
 
-###  1.2. <a name='KennendieUnterschiedeundGemeinsamkeitenvonSicherheitimSinnevonSafetyundSecurity'></a>Kennen die Unterschiede und Gemeinsamkeiten von Sicherheit im Sinne von "Safety" und "Security"
+###  1.2. Kennen die Unterschiede und Gemeinsamkeiten von Sicherheit im Sinne von "Safety" und "Security"
 
-####  1.2.1. <a name='Safetyvs.Security'></a>Safety vs. Security
+####  1.2.1. Safety vs. Security
 
 - Safety: Schutz vor unbeabsichtigten Gefahren
 - Security: Schutz vor absichtlichen Angriffen
 
-####  1.2.2. <a name='KnnenBegriffeIT-Daten-Cyber-Informations-integraleSicherheitgegeneinanderabgrenzenundanwenden'></a>Können Begriffe IT- , Daten-, Cyber-, Informations-, integrale Sicherheit gegeneinander abgrenzen und anwenden
+####  1.2.2. Können Begriffe IT- , Daten-, Cyber-, Informations-, integrale Sicherheit gegeneinander abgrenzen und anwenden
 
 - Informationssicherheit
     - Alle Daten und Informationen durch Massnahmen schützen
@@ -139,11 +64,11 @@ Die Ziele von ISM sind:
     - Airbags, Notschalter, etc
     - Reguliert durch Normen und Gesetze
 
-##  2. <a name='SW02Self-Awareness'></a>SW02 (Self-) Awareness
+##  2. SW02 (Self-) Awareness
 
-###  2.1. <a name='KnnenMalware-Kategorienunterscheiden'></a>Können Malware-Kategorien unterscheiden
+###  2.1. Können Malware-Kategorien unterscheiden
 
-####  2.1.1. <a name='Malware'></a>Malware
+####  2.1.1. Malware
 
 - Virus
   - Benötigt ein Wirt-Datei/Programm (Träger)
@@ -160,9 +85,9 @@ Die Ziele von ISM sind:
   - Fordert Lösegeld
 
 
-###  2.2. <a name='Kennendie5-SchrittederInformationssicherheitundknnenBeispielefrjedenSchrittgebenunderklren'></a>Kennen die 5-Schritte der Informationssicherheit und können Beispiele für jeden Schritt geben und erklären
+###  2.2. Kennen die 5-Schritte der Informationssicherheit und können Beispiele für jeden Schritt geben und erklären
 
-####  2.2.1. <a name='SchrittederInformationssicherheit'></a>5 Schritte der Informationssicherheit
+####  2.2.1. 5 Schritte der Informationssicherheit
 
 1. Sichern (Wiederherstellbarkeit)
     - Backups mit bspw. 3-2-1 Prinzip (3 Kopien, 2 Speichermedien, 1 offline Backup)
@@ -176,30 +101,30 @@ Die Ziele von ISM sind:
 5. Aufpassen (Awareness)
     - Verstand benutzen, Schulungen, Gefahren erkennen
 
-###  2.3. <a name='Kennendie3SulenderInformationssicherheit'></a>Kennen die 3 Säulen der Informationssicherheit
+###  2.3. Kennen die 3 Säulen der Informationssicherheit
 
-####  2.3.1. <a name='SulenderInfomrationssicherheit'></a>3 Säulen der Infomrationssicherheit
+####  2.3.1. 3 Säulen der Infomrationssicherheit
 
 1. Gut funktionierende Technik
 2. Optimierte und Nachhaltige Prozesse
 3. Geschulte und Bewusstsein habende Menschen/Mitarbeiter
 
-##  3. <a name='SW03Intercepten'></a>SW03 Intercepten
+##  3. SW03 Intercepten
 
-###  3.1. <a name='SieknnenerklrenwieeinProxybzw.Reverse-ProxyfunktioniertundwelcheNetzwerkverbindungendabeigemachtwerden'></a>Sie können erklären wie ein Proxy bzw. Reverse-Proxy funktioniert und welche Netzwerkverbindungen dabei gemacht werden
+###  3.1. Sie können erklären wie ein Proxy bzw. Reverse-Proxy funktioniert und welche Netzwerkverbindungen dabei gemacht werden
 
-####  3.1.1. <a name='Forward-ProxyundReverse-Proxy'></a>(Forward-) Proxy und Reverse-Proxy
+####  3.1.1. (Forward-) Proxy und Reverse-Proxy
 
 - Ein Forward Proxy ist ein auf Application-Layer agierender Intermediär, der Client-Anfragen entegennimmt, sie im Namen des Clients an Zielserver weiterleitet, optional cached, filtert, authentisiert und loggt.
 - Ein Reverse Proxy ist eine auf Application-Layer agierender Intermediär, der Anfragen externer Clients engegennimmt, sie im Namen dieser Clients an interne Backend-Server weiterleitet, Antworten sammelt, ggf. load-balanced, cached, filtert terminiert (TLS) und loggt.
 
 ![](img\fwp-vs-rvp.png)
 
-##  4. <a name='SW04Anwendungssicherheit:SessionHandling'></a>SW04 Anwendungssicherheit: Session Handling
+##  4. SW04 Anwendungssicherheit: Session Handling
 
-###  4.1. <a name='SiekennenOWASPTop102021'></a>Sie kennen OWASP Top 10 (2021)
+###  4.1. Sie kennen OWASP Top 10 (2021)
 
-####  4.1.1. <a name='OWASPTop102021'></a>OWASP Top 10 (2021)
+####  4.1.1. OWASP Top 10 (2021)
 
 - A01: Broken Access Control
 - A02: Cryptographic Failures
@@ -212,9 +137,9 @@ Die Ziele von ISM sind:
 - A09: Security Logging and Monitoring Failures
 - A10: Server-Side Request Forgery (SSRF)
 
-###  4.2. <a name='SieknnenAngriffeaufverschiedenenStufendesInternet-Protokoll-Stacksbeschreiben'></a>Sie können Angriffe auf verschiedenen Stufen des Internet-Protokoll-Stacks beschreiben
+###  4.2. Sie können Angriffe auf verschiedenen Stufen des Internet-Protokoll-Stacks beschreiben
 
-####  4.2.1. <a name='Angriffe'></a>Angriffe
+####  4.2.1. Angriffe
 
 - Man-in-the-Middle (Netzwerk und Internetschicht)
     - Teilhaben an fremden Sessions
@@ -239,9 +164,9 @@ Die Ziele von ISM sind:
 - IP Spoofing (Internet und Netzwerkschicht)
     - IP fälschen
 
-###  4.3. <a name='SieknnenBeispielevonSpoofingOverflowundDoS-Angriffeangeben'></a>Sie können Beispiele von Spoofing, Overflow und DoS-Angriffe angeben
+###  4.3. Sie können Beispiele von Spoofing, Overflow und DoS-Angriffe angeben
 
-####  4.3.1. <a name='Spoofing'></a>Spoofing
+####  4.3.1. Spoofing
 
 IP-Spoofing
 
@@ -255,7 +180,7 @@ DNS-Spoofing
 
 - Manipulation von DNS-Antworten, sodass der Resolver die falsche IP antwortet
 
-####  4.3.2. <a name='Overflow'></a>Overflow
+####  4.3.2. Overflow
 
 Integer Overflow
 
@@ -279,17 +204,17 @@ DoS / DDoS (Denial of Service)
     - Viele gleichzeitige HTTP-Requests per Botnet 
     - Server Ressourcen werden erschöpft
 
-###  4.4. <a name='SieknneninwenigenStzenbeschreibenwieARP-SpoofingSYN-FloodingDistributedReflectionDenialofServiceundHeartbleedablaufen'></a>Sie können in wenigen Sätzen beschreiben wie ARP-Spoofing, SYN-Flooding, Distributed Reflection Denial of Service und Heartbleed ablaufen
+###  4.4. Sie können in wenigen Sätzen beschreiben wie ARP-Spoofing, SYN-Flooding, Distributed Reflection Denial of Service und Heartbleed ablaufen
 
-####  4.4.1. <a name='DistributedReflectionDenialofServiceDRDoS'></a>Distributed Reflection Denial of Service (DRDoS)
+####  4.4.1. Distributed Reflection Denial of Service (DRDoS)
 
 Bei einem DRDoS-Angriff fälscht der Angreifer die Quell-IP-Adresse seiner Pakete so, dass sie auf die IP des Opfers zeigen. Er schickt diese Pakete an viele sogenannte Reflektoren (z. B. offene DNS-, NTP- oder andere UDP-Server). Diese Reflektoren antworten dann alle an das Opfer, nicht an den Angreifer – oft mit größeren Antworten als die Anfrage (Amplification). So wird das Opfer mit einer riesigen Menge Traffic überflutet und der Dienst fällt aus.
 
-####  4.4.2. <a name='Heartbleed'></a>Heartbleed
+####  4.4.2. Heartbleed
 
 Heartbleed ist eine Schwachstelle in OpenSSL (Heartbeat-Erweiterung von TLS). Der Angreifer sendet ein spezielles Heartbeat-Request, bei dem die angegebene Länge der Nutzdaten größer ist als die tatsächlich gesendeten Daten. Die fehlerhafte Implementierung prüft dies nicht korrekt und schickt dem Angreifer daraufhin zusätzlich Speicherinhalte des Servers zurück (bis zu 64 KB). So können z. B. Passwörter, Session-Cookies oder sogar private Schlüssel aus dem Arbeitsspeicher ausgelesen werden.
 
-###  4.5. <a name='SieknneneinfacheInteger-Overflow-Angriffeselbstausfhren'></a>Sie können einfache Integer-Overflow-Angriffe selbst ausführen
+###  4.5. Sie können einfache Integer-Overflow-Angriffe selbst ausführen
 
 Beispiel in Java
 
@@ -307,9 +232,9 @@ public class IntegerOverflowDemo {
 
 In Java führen Ganzzahlen (int, long) bei Überlauf nicht zu einer Exception, sondern zu einem Wrap-around im Zweierkomplement – das kann von Angreifern ausgenutzt werden (z. B. um Längenprüfungen oder Limits zu umgehen).
 
-###  4.6. <a name='SiekennendiesicherheitsrelevantenServer-Headersundknnendiesekorrektsetzen'></a>Sie kennen die sicherheitsrelevanten Server-Headers und können diese korrekt setzen
+###  4.6. Sie kennen die sicherheitsrelevanten Server-Headers und können diese korrekt setzen
 
-####  4.6.1. <a name='Strict-Transport-Security'></a>Strict-Transport-Security
+####  4.6.1. Strict-Transport-Security
 
 Erzwingt HTTPS im Browser
 
@@ -317,7 +242,7 @@ Erzwingt HTTPS im Browser
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 ```
 
-####  4.6.2. <a name='X-Content-Type-Options'></a>X-Content-Type-Options
+####  4.6.2. X-Content-Type-Options
 
 Verhindert MIME-Type-Sniffing, Browser benutzt den deklarierten Content-Type
 
@@ -325,7 +250,7 @@ Verhindert MIME-Type-Sniffing, Browser benutzt den deklarierten Content-Type
 X-Content-Type-Options: nosniff
 ```
 
-####  4.6.3. <a name='X-Frame-Options'></a>X-Frame-Options
+####  4.6.3. X-Frame-Options
 
 Schützt vor Clickjacking, indem Framing eingeschränkt wird
 
@@ -333,7 +258,7 @@ Schützt vor Clickjacking, indem Framing eingeschränkt wird
 X-Frame-Options: SAMEORIGIN
 ```
 
-####  4.6.4. <a name='Content-Security-PolicyCSP'></a>Content-Security-Policy (CSP)
+####  4.6.4. Content-Security-Policy (CSP)
 
 Begrenzt, woher Inhalte (Scripts, Styles, Bilder, etc.) geladen werden dürfen
 
@@ -341,7 +266,7 @@ Begrenzt, woher Inhalte (Scripts, Styles, Bilder, etc.) geladen werden dürfen
 Content-Security-Policy: default-src 'self'; script-src 'self';
 ```
 
-####  4.6.5. <a name='Referrer-Policy'></a>Referrer-Policy
+####  4.6.5. Referrer-Policy
 
 Steuert, welche Referrer-Infos (URL des Ursprungs) mitgeschickt werden
 
@@ -349,7 +274,7 @@ Steuert, welche Referrer-Infos (URL des Ursprungs) mitgeschickt werden
 Referrer-Policy: strict-origin-when-cross-origin
 ```
 
-####  4.6.6. <a name='Permissions-Policy'></a>Permissions-Policy
+####  4.6.6. Permissions-Policy
 
 Begrenzt Browser-APIs (Kamera, Mikrofon, Geolocation, usw.).
 
@@ -357,22 +282,22 @@ Begrenzt Browser-APIs (Kamera, Mikrofon, Geolocation, usw.).
 Permissions-Policy: geolocation=(), microphone=(), camera=()
 ```
 
-####  4.6.7. <a name='Cookie-Attributekeinheader'></a>Cookie-Attribute (kein header)
+####  4.6.7. Cookie-Attribute (kein header)
 
 ```http
 Set-Cookie: SESSIONID=abc123; Secure; HttpOnly; SameSite=Strict
 ```
 
 
-###  4.7. <a name='SieknneninwenigenStzenbeschreibenwaseineSessionistundwissenwelcheEigenschafteneinesichereSessionausmacht'></a>Sie können in wenigen Sätzen beschreiben, was eine Session ist und wissen, welche Eigenschaften eine sichere Session ausmacht
+###  4.7. Sie können in wenigen Sätzen beschreiben, was eine Session ist und wissen, welche Eigenschaften eine sichere Session ausmacht
 
-####  4.7.1. <a name='WasisteineSession'></a>Was ist eine Session?
+####  4.7.1. Was ist eine Session?
 
 Eine Session ist eine zustandsbehaftete Verbindung zwischen Client und Server über mehrere HTTP-Requests hinweg. Da HTTP selbst zustandslos ist, merkt sich der Server den Benutzerzustand (Login, Warenkorb, Rollen etc.) mithilfe einer Session-ID, die meist in einem Cookie gespeichert wird.
 
 > Der Server merkt sich wer du bist, und was du gerade tust
 
-####  4.7.2. <a name='EigenschafteneinersicherenSession'></a>Eigenschaften einer sicheren Session
+####  4.7.2. Eigenschaften einer sicheren Session
 
 - Zufällige, lange, nicht vorhersagbare Session-ID (kryptographisch starke Randomness)
 - bertragung nur über HTTPS (Schutz vor Mitlesen/Diebstahl)
@@ -382,20 +307,20 @@ Eine Session ist eine zustandsbehaftete Verbindung zwischen Client und Server ü
 - Sauberes Logout (Session-Invalidierung auf dem Server)
 - Optional: Bindung an Kontext (z. B. User-Agent / IP) für zusätzliche Sicherheit.
 
-###  4.8. <a name='SiekennendeSame-Origin-PolicyundwissenwiesiebeiCookieswirkt'></a>Sie kennen de Same-Origin-Policy und wissen, wie sie bei Cookies wirkt
+###  4.8. Sie kennen de Same-Origin-Policy und wissen, wie sie bei Cookies wirkt
 
 Browser senden Cookies anhand von Domain/Pfad, aber lesen kann sie per JavaScript nur Code aus derselben Origin. Das ist der Schutz durch die Same-Origin-Policy.
 
-###  4.9. <a name='SieknneninwenigenStzeneinenAngriffmitSession-Fixationbeschreiben'></a>Sie können in wenigen Sätzen einen Angriff mit Session-Fixation beschreiben
+###  4.9. Sie können in wenigen Sätzen einen Angriff mit Session-Fixation beschreiben
 
-####  4.9.1. <a name='AblaufeinesSession-FixationAngriffs'></a>Ablauf eines Session-Fixation Angriffs
+####  4.9.1. Ablauf eines Session-Fixation Angriffs
 
 1. Der Angreifer erhält vom Server eine gültige Session-ID (bspw. durch Aufruf einer Login-Seite)
 2. Er gibt die Session-ID an das Opfer weiter (bspw. per manipulierter Link: `...?SESSIONID=12345)
 3. Der Opfer benutzt das Link und loggt sich mit dieser Session-ID ein
 4. Da der Server diesselbe Session-ID wiederverwendet ist der Angreifer nun eingeloggt
 
-###  4.10. <a name='SieknneneinsicheresSession-ManagementmitCookiesimplementieren'></a>Sie können ein sicheres Session-Management mit Cookies implementieren
+###  4.10. Sie können ein sicheres Session-Management mit Cookies implementieren
 
 1. Session-ID sicher erzeugen
     - Kryptographisch starke Zufallszahl (z. B. 128+ Bit Entropie)
@@ -422,22 +347,22 @@ Browser senden Cookies anhand von Domain/Pfad, aber lesen kann sie per JavaScrip
     - Alte Session ungültig machen
     - Schutz vor Session-Fixation
 
-##  5. <a name='SW05SymmetrischeKryptologie'></a>SW05 Symmetrische Kryptologie
+##  5. SW05 Symmetrische Kryptologie
 
-###  5.1. <a name='SieverstehenwassymmetrischeKryptographieistwelcheArtenvonSicherheitundAngriffsartenesgibt'></a>Sie verstehen was symmetrische Kryptographie ist, welche Arten von Sicherheit und Angriffsarten es gibt
+###  5.1. Sie verstehen was symmetrische Kryptographie ist, welche Arten von Sicherheit und Angriffsarten es gibt
 
 Symmetrische Kryptographie benutzt denselben geheimen Schlüssel zum Verschlüsseln und Entschlüsseln
 
 - Beipiele: AES, ChaCha20
 - Wird vorallem bei grossen Datenmengen verwendet (schnell) um ihre Vertraulichkeit zu gewähren
 
-####  5.1.1. <a name='ArtenanSicherheitbeisymmetrischeKryptographie'></a>Arten an Sicherheit bei symmetrische Kryptographie
+####  5.1.1. Arten an Sicherheit bei symmetrische Kryptographie
 
 - Vertraulichkeit: Aus dem Ciphertext kann nichts über den Klartext gelernt werden
 - Integrität: Mit MAC/HMAC kann erkannt werden ob die Daten verändert wurden
 - Authentizität: Mit einer Signatur erkennen ob der Sender der richtige ist
 
-####  5.1.2. <a name='AngriffsartenaufsymmetrischeKryprographie'></a>Angriffsarten auf symmetrische Kryprographie
+####  5.1.2. Angriffsarten auf symmetrische Kryprographie
 
 - Ciphertext-only attack (COA)
     - Nur der Ciphertext bekannt
@@ -454,9 +379,9 @@ Symmetrische Kryptographie benutzt denselben geheimen Schlüssel zum Verschlüss
 - Side-Channel attack
     - Informationen über den Schlüssel per analyse von Stromverbrauch, Dauer, Cache-Zugriffe gewinnen
 
-###  5.2. <a name='SieverstehenwaseineHashfunktionistundwelcheEigenschafteneinekryptographischeHashfunktionausmachenbzw.wasesheisstwenneineHashfunktiongebrochenist'></a>Sie verstehen was eine Hashfunktion ist und welche Eigenschaften eine kryptographische Hashfunktion ausmachen, bzw. was es heisst wenn eine Hashfunktion gebrochen ist
+###  5.2. Sie verstehen was eine Hashfunktion ist und welche Eigenschaften eine kryptographische Hashfunktion ausmachen, bzw. was es heisst wenn eine Hashfunktion gebrochen ist
 
-####  5.2.1. <a name='EigenschafteneinerkryptographischenHashfunktion'></a>Eigenschaften einer kryptographischen Hashfunktion
+####  5.2.1. Eigenschaften einer kryptographischen Hashfunktion
 
 Damit eine Hashfunktion kryptographisch sicher ist, soll sie:
 
@@ -469,16 +394,16 @@ Damit eine Hashfunktion kryptographisch sicher ist, soll sie:
 - Kollisionsresistenz
     - Es soll sehr schwer sein, irgendein Paar M₁ ≠ M₂ zu finden, mit H(M₁) = H(M₂). (Noch stärkeres Kriterium als Zweite-Präimage.)
 
-####  5.2.2. <a name='GebrocheneHashfunktion'></a>Gebrochene Hashfunktion
+####  5.2.2. Gebrochene Hashfunktion
 
 Eine Hashfunktion gilt als gebrochen, wenn eine oder mehrere dieser Eigenschaften praktisch angreifbar sind, z. B.:
 
 - Es gibt effiziente Verfahren, um Kollisionen zu finden (z. B. bei MD5, SHA-1 → nicht mehr für Signaturen verwenden).
 - Preimage- oder Zweite-Präimage-Angriffe sind deutlich besser als Brute-Force.
 
-###  5.3. <a name='SiekennenverschiedeneAnwendungenvonHashfunktionenundknnenmitHilfevonHashfunktionendieIntegrittvonnachrichtensicherstellen'></a>Sie kennen verschiedene Anwendungen von Hashfunktionen und können mit Hilfe von Hashfunktionen die Integrität von nachrichten sicherstellen
+###  5.3. Sie kennen verschiedene Anwendungen von Hashfunktionen und können mit Hilfe von Hashfunktionen die Integrität von nachrichten sicherstellen
 
-####  5.3.1. <a name='AnwendungvonHashfunktionen'></a>Anwendung von Hashfunktionen
+####  5.3.1. Anwendung von Hashfunktionen
 
 - Integritätsprüfung von Dateien/Nachrichten
     - Download-Checksums (SHA-256 auf Website, lokal vergleichen).
@@ -496,7 +421,7 @@ Eine Hashfunktion gilt als gebrochen, wenn eine oder mehrere dieser Eigenschafte
 - Deduplication / Fingerprinting
     - Hashwerte als „Fingerabdruck“ von Dateien/Blöcken (Dubletten-Erkennung).
 
-####  5.3.2. <a name='IntegrittmitHashfunktionensicherstellen'></a>Integrität mit Hashfunktionen sicherstellen
+####  5.3.2. Integrität mit Hashfunktionen sicherstellen
 
 1. Sender berechnet: h = H(Nachricht)
 2. Sender schickt: Nachricht + Hashwert h
@@ -508,7 +433,7 @@ Sicherer (authentifizierter) Ansatz: HMAC
 - Statt nur H(Nachricht): HMAC = H(geheimer_Schlüssel || Nachricht)
 - Nur wer den Schlüssel kennt, kann einen gültigen HMAC erzeugen → schützt vor Manipulation durch Dritte (Integrität + Authentizität).
 
-###  5.4. <a name='SiewissenwelcheAlgorithmensichersind'></a>Sie wissen, welche Algorithmen sicher sind
+###  5.4. Sie wissen, welche Algorithmen sicher sind
 
 - AES (128/192/256 Bit), in sicheren Modi wie:
 - GCM, CCM (authenticated encryption)
@@ -522,13 +447,13 @@ Nicht mehr sicher / veraltet:
 - alte Stream-Cipher wie RC4
 - MD2, MD4, MD5
 
-##  6. <a name='SW06AsymmetrischeKryptologie'></a>SW06 Asymmetrische Kryptologie
+##  6. SW06 Asymmetrische Kryptologie
 
-###  6.1. <a name='SieverstehenwasPublic-Key-Kryptographieist'></a>Sie verstehen was Public-Key-Kryptographie ist
+###  6.1. Sie verstehen was Public-Key-Kryptographie ist
 
 Die Grundidee ist, was it dem Public Key verschlüsselt wird, kann nur mit dem Private Key entschlüsselt werden
 
-###  6.2. <a name='SiekennendiegngigenasymmetrischenundhybridenVerschlsselungs-undSignaturalgorithmenwissenworaufderenSicherheitbasiertundwiesieinderPraxisangewendetwerden'></a>Sie kennen die gängigen asymmetrischen und hybriden Verschlüsselungs- und Signaturalgorithmen, wissen worauf deren Sicherheit basiert und wie sie in der Praxis angewendet werden
+###  6.2. Sie kennen die gängigen asymmetrischen und hybriden Verschlüsselungs- und Signaturalgorithmen, wissen worauf deren Sicherheit basiert und wie sie in der Praxis angewendet werden
 
 - RSA
     - Schwierigkeit der Faktorisierung grosser Zahlen (Produkt zweier grossen Primzahlen)
@@ -541,7 +466,7 @@ Die Grundidee ist, was it dem Public Key verschlüsselt wird, kann nur mit dem P
     - ECDSA (Ellipic Curve Singature Algorith)
     - EdDSA (Curve25519)
 
-###  6.3. <a name='SiewissenwaskryptographischsichereZufallszahlensindundwodieseverwendetwerden.SieknnenschwachgewhlteZufallszahlenfrAngriffeausntzen'></a>Sie wissen was kryptographisch sichere Zufallszahlen sind und wo diese verwendet werden. Sie können schwach gewählte Zufallszahlen für Angriffe ausnützen
+###  6.3. Sie wissen was kryptographisch sichere Zufallszahlen sind und wo diese verwendet werden. Sie können schwach gewählte Zufallszahlen für Angriffe ausnützen
 
 Kryptographisch sichere Zufallszahlen sind Zahlenfolgen, die
 
@@ -549,7 +474,7 @@ Kryptographisch sichere Zufallszahlen sind Zahlenfolgen, die
 - eine gute Verteilung haben (keine „Muster“),
 - und aus einem CSPRNG (Cryptographically Secure Pseudo Random Number Generator) stammen.
 
-####  6.3.1. <a name='WiekanneinAngreiferdasausnutzen'></a>Wie kann ein Angreifer das ausnutzen?
+####  6.3.1. Wie kann ein Angreifer das ausnutzen?
 
 Wenn Session-IDs / Tokens aus einem vorhersagbaren Generator kommen:
 
@@ -557,7 +482,7 @@ Wenn Session-IDs / Tokens aus einem vorhersagbaren Generator kommen:
 2. rekonstruiert oder schätzt das RNG-Verhalten (Seed, Algorithmus),
 3. kann zukünftige oder benachbarte Werte erraten.
 
-###  6.4. <a name='SiewissenwaseinePublic-Key-InfrastruktureineCertificateAuthorityundeinZertifikatistwofrdieseverwendetwerdenundwieZertifikateausgestelltwerden'></a>Sie wissen was eine Public-Key-Infrastruktur, eine Certificate Authority und ein Zertifikat ist, wofür diese verwendet werden und wie Zertifikate ausgestellt werden
+###  6.4. Sie wissen was eine Public-Key-Infrastruktur, eine Certificate Authority und ein Zertifikat ist, wofür diese verwendet werden und wie Zertifikate ausgestellt werden
 
 Eine PKI ist das Gesamtsystem aus Rollen, Prozessen und Technologien, das digitale Zertifikate ausstellt, verwaltet, prüft und widerruft. Sie besteht aus:
 
@@ -566,7 +491,7 @@ Eine PKI ist das Gesamtsystem aus Rollen, Prozessen und Technologien, das digita
 - Verzeichnisse (Zertifikats- und Sperrlisten-Server)
 - Mechanismen zur überprüfung (CRL. OCSP)
 
-####  6.4.1. <a name='AustellungvonZertifikaten'></a>Austellung von Zertifikaten
+####  6.4.1. Austellung von Zertifikaten
 
 1. Schlüsselpaar erzeugen
     - Server/Client erzeugt Private + Public Key.
@@ -589,11 +514,11 @@ Eine PKI ist das Gesamtsystem aus Rollen, Prozessen und Technologien, das digita
         - Gültigkeit (Datum, Sperrstatus via CRL/OCSP)
         - Name (passt Domain?)
 
-###  6.5. <a name='SiewissenwasSSLTLSistwelcheFunktionalitteserreichtundwiedasProtokollkonzeptionellabluft'></a>Sie wissen was SSL/TLS ist, welche Funktionalität es erreicht und wie das Protokoll konzeptionell abläuft
+###  6.5. Sie wissen was SSL/TLS ist, welche Funktionalität es erreicht und wie das Protokoll konzeptionell abläuft
 
 SSL/TLS ist ein kryptographisches Protokoll zwischen Transport- und Anwendungsschicht, das Verbindungen z. B. für HTTPS, IMAPS, SMTPS, VPNs absichert.
 
-####  6.5.1. <a name='AblaufSSLTLS'></a>Ablauf SSL/TLS
+####  6.5.1. Ablauf SSL/TLS
 
 TCP-Handshake (SYN / SYN-ACK / ACK)
 1. Client → Server: SYN
@@ -657,7 +582,7 @@ Jetzt startet der TLS-Handshake:
 
 Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records verschlüsselt über die bestehende TCP-Verbindung.
 
-##  7. <a name='SW07AnforderungenkryptographischeProtokolle'></a>SW07 Anforderungen kryptographische Protokolle
+##  7. SW07 Anforderungen kryptographische Protokolle
 
 - Vertraulichkeit
     - Nur berechtigte Parteien können Nachrichten lesen.
@@ -704,9 +629,9 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
     - Wichtig, damit es in der Praxis korrekt implementiert und nicht „aus Performance-Gründen“ unsicher umgangen wird.
     - Beispiel: TLS 1.3 mit reduziertem Handshake-Overhead gegenüber älteren Versionen.
 
-##  8. <a name='SW09Risiko-Management'></a>SW09 Risiko-Management
+##  8. SW09 Risiko-Management
 
-###  8.1. <a name='KnnendieBegriffeBedrohungSchwachstelleExpositionAssetimCyberraumanBeispielenerklren'></a>Können die Begriffe Bedrohung, Schwachstelle, Exposition, Asset im Cyberraum an Beispielen erklären
+###  8.1. Können die Begriffe Bedrohung, Schwachstelle, Exposition, Asset im Cyberraum an Beispielen erklären
 
 - Asset
     - Etwas, das für die Firma einen Wert hat und geschützt werden muss.
@@ -729,7 +654,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
         - Ein Webserver mit offenem Port 80/443 ins Internet hat hohe Exposition.
         - Eine Datenbank nur im internen Netz, ohne direkten Internetzugang, hat geringere Exposition.
 
-###  8.2. <a name='KnnenRisikensystematischidentifizieren'></a>Können Risiken systematisch identifizieren
+###  8.2. Können Risiken systematisch identifizieren
 
 - Risiken systematisch identifizieren
     - Ziel: Alle relevanten Risiken strukturiert erfassen, nicht nur „aus dem Bauchgefühl“.
@@ -757,7 +682,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
         - Systematisches Vorgehen (z. B. Asset-Liste, Bedrohungskatalog, Workshops).
         - Dokumentation der gefundenen Risiken (Risikoliste / Risikoregister).
 
-###  8.3. <a name='KennendasVorgehenimqualitativenRisiko-Assessmentundknnenesbeispielhaftanwenden'></a>Kennen das Vorgehen im qualitativen Risiko-Assessment und können es beispielhaft anwenden
+###  8.3. Kennen das Vorgehen im qualitativen Risiko-Assessment und können es beispielhaft anwenden
 
 - Qualitatives Risiko-Assessment
     - Ziel:
@@ -788,7 +713,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
         - S = 5 (von 5) → sehr hoher Schaden.
         - R = 20 → in Rot-Bereich der Matrix → Massnahmen erforderlich (z. B. Backup-Strategie, Patch-Management, Awareness)
 
-###  8.4. <a name='KennenStrategienzurminimierungvonRisiken'></a>Kennen Strategien zur minimierung von Risiken
+###  8.4. Kennen Strategien zur minimierung von Risiken
 
 - Strategien zur Minimierung von Risiken
     - Ziel:
@@ -832,9 +757,9 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
         - Wichtig:
             - Entscheidung muss **bewusst dokumentiert** und vom Management getragen sein.
 
-##  9. <a name='SW11Vulnerabilities'></a>SW11 Vulnerabilities
+##  9. SW11 Vulnerabilities
 
-###  9.1. <a name='WissenwasVulnerabilitiessind'></a>Wissen, was "Vulnerabilities" sind
+###  9.1. Wissen, was "Vulnerabilities" sind
 
 - Vulnerabilities (Schwachstellen)
     - Definition:
@@ -849,7 +774,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
         - Eine Schwachstelle allein verursacht noch keinen Schaden.
         - Erst zusammen mit einer **Bedrohung** und einem **Asset** entsteht ein **Risiko**.
 
-###  9.2. <a name='DieBedeutungdesDisclosure-ProzesseseinerVulnerabilityverstehen'></a>Die Bedeutung des Disclosure-Prozesses einer Vulnerability verstehen
+###  9.2. Die Bedeutung des Disclosure-Prozesses einer Vulnerability verstehen
 
 - Disclosure-Prozess einer Vulnerability
     - Bedeutung:
@@ -891,7 +816,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
             - Sofortige, vollständige Veröffentlichung der Details – erhöht Druck auf Hersteller,
               aber auch Risiko für Angriffe.
 
-###  9.3. <a name='MethodenzurPriorisierungvonVulnerabilitieskennen'></a>Methoden zur Priorisierung von Vulnerabilities kennen
+###  9.3. Methoden zur Priorisierung von Vulnerabilities kennen
 
 - Methoden zur Priorisierung von Vulnerabilities
     - Ziel:
@@ -953,9 +878,9 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
             + Exploit-Verfügbarkeit / aktive Angriffe
             = Prioritätsstufe (z. B. „High“, „Medium“, „Low“).
 
-##  10. <a name='SW12Anwendungssicherheit:Injection'></a>SW12 Anwendungssicherheit: Injection
+##  10. SW12 Anwendungssicherheit: Injection
 
-###  10.1. <a name='SieknneneinfacheCross-SiteRequestForgery-AngriffeausfhrenundknneneffektiveMassnahmendagegenwhlen'></a>Sie können einfache Cross-Site Request Forgery-Angriffe ausführen und können effektive Massnahmen dagegen wählen
+###  10.1. Sie können einfache Cross-Site Request Forgery-Angriffe ausführen und können effektive Massnahmen dagegen wählen
 
 - Was ist CSRF?
     - Ein angemeldeter Benutzer führt unbewusst eine Aktion auf einer Website aus, weil ein Angreifer ihn auf eine präparierte Seite/Request lockt.
@@ -982,7 +907,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
 
 ---
 
-###  10.2. <a name='SieknneninwenigenStzenerklrenwasdasKonzepteinesInjection-Angriffsist'></a>Sie können in wenigen Sätzen erklären, was das Konzept eines Injection-Angriffs ist
+###  10.2. Sie können in wenigen Sätzen erklären, was das Konzept eines Injection-Angriffs ist
 
 - Grundidee
     - Unvertrauenswürdige Eingaben werden in Befehle oder Abfragen eingebettet, ohne korrekt von der Befehlslogik getrennt zu sein.
@@ -1010,7 +935,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
 
 ---
 
-###  10.3. <a name='SieknnendenAblaufvonPathTraversalSQLInjectionundCross-Site-Scripting-AngriffeninwenigenStzenbeschreiben'></a>Sie können den Ablauf von Path Traversal, SQL Injection und Cross-Site-Scripting-Angriffen in wenigen Sätzen beschreiben
+###  10.3. Sie können den Ablauf von Path Traversal, SQL Injection und Cross-Site-Scripting-Angriffen in wenigen Sätzen beschreiben
 
 - Path Traversal (Directory Traversal)
     - Ziel:
@@ -1049,7 +974,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
 
 ---
 
-###  10.4. <a name='SieknnensinnvolleundeffektiveMassnahmengegenInjection-AngriffeimallgemeinenundPathTraversalSQLInjectionundCross-Site-Scriptuing-Angriffedefinieren'></a>Sie können sinnvolle und effektive Massnahmen gegen Injection-Angriffe im allgemeinen, und Path Traversal, SQL Injection und Cross-Site-Scriptuing-Angriffe definieren
+###  10.4. Sie können sinnvolle und effektive Massnahmen gegen Injection-Angriffe im allgemeinen, und Path Traversal, SQL Injection und Cross-Site-Scriptuing-Angriffe definieren
 
 - Allgemeine Massnahmen gegen Injection
     - Eingaben nicht blind vertrauen:
@@ -1097,9 +1022,9 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
         - Standard-Output-Encoding nutzen, `unsafe`-Funktionen vermeiden.
 
 
-##  11. <a name='SW14Quantencomputingund-kryptographie'></a>SW14 Quantencomputing und -kryptographie
+##  11. SW14 Quantencomputing und -kryptographie
 
-###  11.1. <a name='SiewissenwaseinQuantencomputeristundwasihnvoneinemklassischenComputerunterscheidet'></a>Sie wissen was ein Quantencomputer ist und was ihn von einem klassischen Computer unterscheidet
+###  11.1. Sie wissen was ein Quantencomputer ist und was ihn von einem klassischen Computer unterscheidet
 
 - Quantencomputer
     - Rechnet nicht mit klassischen Bits (`0` oder `1`), sondern mit **Qubits**, die in Zuständen `0`, `1` und Überlagerungen (Superposition) dazwischen sein können.
@@ -1121,7 +1046,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
     - Sie sind speziell für bestimmte Problemklassen (z. B. Faktorisierung, Suche in unsortierten Daten) deutlich effizienter.
 
 
-###  11.2. <a name='SieknnenBeispielevonProblemenangebenwelchevoneinemQuantencomputerbesondersschnellgelstwerdenknnen'></a>Sie können Beispiele von Problemen angeben, welche von einem Quantencomputer besonders schnell gelöst werden können
+###  11.2. Sie können Beispiele von Problemen angeben, welche von einem Quantencomputer besonders schnell gelöst werden können
 
 - Faktorisierung großer Zahlen
     - Mit **Shor-Algorithmus**:
@@ -1145,7 +1070,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
         - Medikamentenentwicklung, neue Materialien, Optimierungsprobleme.
 
 
-###  11.3. <a name='SieverstehenwelchenEinflussdieExistenzeinesQuantencomputersaufdieKryptographiehat'></a>Sie verstehen welchen Einfluss die Existenz eines Quantencomputers auf die Kryptographie hat
+###  11.3. Sie verstehen welchen Einfluss die Existenz eines Quantencomputers auf die Kryptographie hat
 
 - Einfluss auf **asymmetrische Kryptographie**
     - Shor-Algorithmus bricht:
@@ -1177,7 +1102,7 @@ Ab jetzt laufen alle HTTP-Daten (z. B. GET / POST) innerhalb von TLS-Records ver
         (z. B. Gesundheitsdaten, staatliche/geheime Informationen).
 
 
-###  11.4. <a name='SieknnenerklrenwieQuantenschlsselaustauschundQuantenzufallszahlengeneratorenfunktionierenundwissenwelcheSicherheitseigenschaftendadurcherreichtwerden'></a>Sie können erklären wie Quantenschlüsselaustausch und Quantenzufallszahlengeneratoren funktionieren und wissen, welche Sicherheitseigenschaften dadurch erreicht werden
+###  11.4. Sie können erklären wie Quantenschlüsselaustausch und Quantenzufallszahlengeneratoren funktionieren und wissen, welche Sicherheitseigenschaften dadurch erreicht werden
 
 - Quantenschlüsselaustausch (Quantum Key Distribution, QKD)
     - Idee:
