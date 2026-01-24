@@ -1,6 +1,6 @@
 public class Arithmetic {
     public static void main(String[] args) {
-        int x = 5, y = 10, z = 3;
+        int x = 5, y = 10, z = 3, k = 1;
         double a = 9, b = 3, c = 2;
 
         // Addition
@@ -36,6 +36,11 @@ public class Arithmetic {
 
 
         // Increment and Decrement Operators
+
+        k =- 1 ;
+        System.out.println("Incremented k: " + k);
+        k -= 1 ;
+        System.out.println("Incremented k: " + k);
 
         // Increment by 1
         x++;
