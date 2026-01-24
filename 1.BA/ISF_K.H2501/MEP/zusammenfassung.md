@@ -118,7 +118,7 @@ Die Ziele von ISM sind:
 - Ein Forward Proxy ist ein auf Application-Layer agierender Intermediär, der Client-Anfragen entegennimmt, sie im Namen des Clients an Zielserver weiterleitet, optional cached, filtert, authentisiert und loggt.
 - Ein Reverse Proxy ist eine auf Application-Layer agierender Intermediär, der Anfragen externer Clients engegennimmt, sie im Namen dieser Clients an interne Backend-Server weiterleitet, Antworten sammelt, ggf. load-balanced, cached, filtert terminiert (TLS) und loggt.
 
-![](img\fwp-vs-rvp.png)
+![](img/fwp-vs-rvp.png)
 
 ##  4. SW04 Anwendungssicherheit: Session Handling
 
