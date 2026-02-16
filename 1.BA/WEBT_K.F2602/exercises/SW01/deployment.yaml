@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goritch
+  namespace: hslu-test
+  labels:
+    test: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goritch
+  template:
+    metadata:
+      labels:
+        app: goritch
+    spec:
+      securityContext:
+        fsGroup: 1000
+        fsGroupChangePolicy: OnRootMismatch
+      containers:
+        - name: warp-stone
+          image: nginxinc/nginx-unprivileged:latest
+          volumeMounts:
+            - name: index-html
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: index-html
+          configMap:
+            name: page-content

@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod-nginx
+  name: ghoritch-hslu-example
+  namespace: hslu-test
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: study-example.kubelize.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: warpfuel-pipe
+            port:
+              number: 8080
+  tls:
+  - hosts:
+    - study-example.kubelize.com
+    secretName: hslu-example-tls
