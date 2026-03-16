@@ -49,13 +49,44 @@ Alternative schreibweise: $Y = \overline{A}B\overline{C} ∨ \overline{A}BC ∨ 
 
 ### Aufgabe B - Zeichnen Sie eine Gatterschaltung der disjunktiven Form
 
-![alt text](/1.BA/OSA.F2601/img/sw04-aufgabe-b.pngsw04-aufgabe-1b.png)
+![alt text](/1.BA/OSA.F2601/img/sw04-aufgabe-1b.png)
 
 ## Aufgabe 2 
 
 Zeichnen Sie zu folgender disjunktiven Funktionsdarstellung eine Gatter-Schaltung (Tipp: Multiplexer)
 
 $f(x_1,x_2,s)=x_1\overline{s} ∨ x_2s$
+
+## Aufgabe 5
+
+Gegeben ist folgender Schaltnetz. Erstelle die Warheitstabelle dazu.
+
+![alt text](/1.BA/OSA.F2601/img/sw04-aufgabe-5.png)
+
+$$
+\begin{array}{c c c | c}
+A & B & C & Y \\
+\hline
+0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 0 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 1
+\end{array}
+$$
+
+## Aufgabe 6
+
+Erstelle den Schaltnetz zu folgendem Schaltfunktion:
+
+$$
+f(A,B,C) = (B ∨ C) ∧ A
+$$
+
+![alt text](/1.BA/OSA.F2601/img/sw04-aufgabe-6.png)
 
 
 
